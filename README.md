@@ -9,7 +9,7 @@ Static project page for **I-BFM: Reward-Conditioned Robust Humanoid Interaction 
 - **Source repository:** [https://github.com/iamhardworking/I-BFM](https://github.com/iamhardworking/I-BFM)
 - **Local preview:** [http://localhost:8000](http://localhost:8000)
 
-The public site is deployed from the `main` branch with GitHub Pages. The local URL works while the preview server below is running.
+The public site is hosted from the standalone `iamhardworking/I-BFM` repository. The local URL works while the preview server below is running.
 
 ## Preview locally
 
@@ -32,7 +32,8 @@ Then open <http://localhost:8000>. The HTTP server is required for loading the s
 - `static/css/site.css` — responsive visual system
 - `static/js/site.js` — trace viewer, video presets, and manual controller preview
 - `static/paper/I-BFM.pdf` — manuscript
-- `static/video/` — overview and rollout videos
+- `ebd2e43d024df6559dd51a95911e760d.mp4` — main project video and hero background
+- `static/video/` — interactive rollout videos
 - `static/data/` — copied experiment traces and summaries
 
 All runtime assets are local; the page has no CDN or package-manager dependency.
