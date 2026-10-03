@@ -14,9 +14,14 @@ The interactive section runs real MuJoCo WebAssembly physics and the original 16
 
 - 1252-D actor input assembled from current robot/object/contact state, action history, privileged context, and the selected 256-D learned phase latent
 - 29-D joint-position action with the original action scaling, clipping, PD gains, joint limits, and 50 Hz policy rate
-- Automatic approach → lift → transport → align → lower → place controller
-- Manual learned-latent selection, movable target, box nudge, robot push, pause, and reset
+- Frozen z2z controller stack: approach, physical-contact lift, transport, near-goal closed-loop pivot candidate switching, rolling guards, placement, recovery/get-up, and strict 3D terminal latch
+- Default scene is formal seed `166559744`, episode `0000` from the paired 3×100 evaluation; movable target, box nudge, robot push, pause, and reset remain interactive
 - The 129.1 MB actor is loaded only after the visitor clicks **Load live session**
+
+The reported `283/300 = 94.3%` nominal carry success rate is from the formal
+CUDA 3×100 evaluation. The live viewer uses the same actor, latents, controller
+thresholds, default sample, and MuJoCo contact protocol, but runs ONNX/WASM in
+the browser; the formal CUDA aggregate is not relabeled as a browser benchmark.
 
 The actor is intentionally kept outside Git history. During Pages deployment, GitHub Actions downloads the public Release asset, verifies it, and injects it into the Pages artifact so browser loading is same-origin. Its expected SHA-256 is:
 

@@ -198,7 +198,7 @@
                           <geom class="visual" mesh="left_wrist_yaw_link" />
                           <geom pos="0.0415 0.003 0" quat="1 0 0 0" class="visual" mesh="left_rubber_hand" material="black" />
                           <site name="left_palm" pos="0.08 0 0" size="0.01" />
-                          <geom name="left_hand_collision" class="collision" size="0.035" fromto="0.07 0 0 0.15 -0.02 0" />
+                          <geom name="left_hand_collision" class="collision" size="0.035" friction="1.0 0.005 0.0001" fromto="0.07 0 0 0.15 -0.02 0" />
                         </body>
                       </body>
                     </body>
@@ -239,7 +239,7 @@
                           <geom class="visual" mesh="right_wrist_yaw_link" />
                           <geom pos="0.0415 -0.003 0" quat="1 0 0 0" class="visual" mesh="right_rubber_hand" material="black" />
                           <site name="right_palm" pos="0.08 0 0" size="0.01" />
-                          <geom name="right_hand_collision" class="collision" size="0.035" fromto="0.07 0 0 0.15 0.02 0" />
+                          <geom name="right_hand_collision" class="collision" size="0.035" friction="1.0 0.005 0.0001" fromto="0.07 0 0 0.15 0.02 0" />
                         </body>
                       </body>
                     </body>
@@ -252,12 +252,14 @@
       </body>
     </body>
     <geom name="sim2sim_floor" type="plane" pos="0 0 0" size="20 20 0.05" rgba="0.10 0.12 0.13 1" friction="0.9 0.01 0.001" contype="1" conaffinity="1" group="0" />
-    <body name="sim2sim_carry_box" pos="0.70 0 0.186028293">
+    <geom name="initial_box_support" type="box" pos="3.69271203447 -0.84556226549 0.168280467522" size="0.2 0.2 0.01" rgba="0.10 0.62 0.82 1" friction="0.9 0.01 0.001" contype="4" conaffinity="2" group="0" />
+    <body name="sim2sim_carry_box" pos="3.69271206856 -0.845562279224 0.366130381823">
       <freejoint name="sim2sim_carry_box_joint" />
-      <geom name="sim2sim_carry_box_geom" type="box" size="0.175 0.175 0.175" pos="0.00102584 -0.00160677 0.00637628" quat="0.07016202 0.97153219 0.22227911 0.04236142" rgba="0.88 0.42 0.10 1" friction="0.9 0.01 0.001" condim="3" mass="0.7" contype="1" conaffinity="1" group="0" />
+      <geom name="sim2sim_carry_box_geom" type="box" size="0.1675266 0.1688563 0.1800429" pos="0.00102584 -0.00160677 0.00637628" quat="0.07016202 0.97153219 0.22227911 0.04236142" rgba="0.88 0.42 0.10 1" friction="0.9 0.01 0.001" condim="3" mass="0.7" contype="2" conaffinity="5" group="0" />
     </body>
-    <body name="sim2sim_goal_body" pos="1.70 0 0.006" mocap="true">
-      <geom name="sim2sim_carry_goal" type="cylinder" size="0.20 0.006" rgba="0.45 0.96 0.20 0.60" contype="0" conaffinity="0" group="0" />
+    <body name="sim2sim_goal_body" pos="1 1 0.060817293672" mocap="true">
+      <geom name="target_box_support" type="box" size="0.2 0.2 0.01" rgba="0.16 0.82 0.34 1" friction="0.9 0.01 0.001" contype="4" conaffinity="2" group="0" />
+      <geom name="sim2sim_carry_goal" type="cylinder" pos="0 0 -0.054817293672" size="0.20 0.006" rgba="0.45 0.96 0.20 0.60" contype="0" conaffinity="0" group="0" />
     </body>
     <light name="sim2sim_key_light" pos="0 -3 4" dir="0.2 0.5 -1" diffuse="0.9 0.9 0.9" ambient="0.35 0.35 0.35" specular="0.1 0.1 0.1" />
   </worldbody>
