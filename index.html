@@ -11,7 +11,7 @@
     <title>I-BFM · Reward-Conditioned Humanoid Interaction</title>
     <link rel="icon" href="static/images/mark.svg" type="image/svg+xml" />
     <link rel="preload" href="static/images/hero-poster.jpg" as="image" fetchpriority="high" />
-    <link rel="stylesheet" href="static/css/site.css?v=overview-clean-20261003" />
+    <link rel="stylesheet" href="static/css/site.css?v=no-representation-20261003" />
     <script src="static/js/site.js?v=overview-tabs-20261003" defer></script>
   </head>
   <body>
@@ -24,7 +24,6 @@
       </a>
       <nav>
         <a href="#overview">Overview</a>
-        <a href="#method">Method</a>
         <a href="#interactive">Interactive</a>
         <a href="#results">Results</a>
       </nav>
@@ -35,7 +34,6 @@
       <span class="chapter-label">Explore</span>
       <a class="active" href="#top"><i></i>Introduction</a>
       <a href="#overview"><i></i>Overview</a>
-      <a href="#method"><i></i>Representation</a>
       <a href="#interactive"><i></i>Interactive lab</a>
       <a href="#results"><i></i>Results</a>
     </aside>
@@ -90,59 +88,9 @@
 
       </section>
 
-      <section class="section dark" id="method">
-        <div class="section-head inverse reveal">
-          <span class="section-index">02 / REPRESENTATION</span>
-          <h2>Interaction as a<br /><em>programmable latent.</em></h2>
-          <p>
-            Forward–backward representations turn reward definitions into executable latent
-            commands. LOGO keeps long-horizon behavior grounded by repeatedly solving local
-            interaction goals with closed-loop feedback.
-          </p>
-        </div>
-
-        <div class="method-flow reveal" aria-label="I-BFM method flow">
-          <article>
-            <span class="method-number">01</span>
-            <div class="glyph coupled" aria-hidden="true"><b></b><b></b><b></b></div>
-            <h3>Coupled dynamics</h3>
-            <p>Encode robot state, object motion, contact, and action history together.</p>
-          </article>
-          <span class="flow-arrow">→</span>
-          <article>
-            <span class="method-number">02</span>
-            <div class="glyph latent" aria-hidden="true"><b></b><b></b><b></b><b></b></div>
-            <h3>Reward → latent</h3>
-            <p>Infer a direction in the learned representation from a task reward.</p>
-          </article>
-          <span class="flow-arrow">→</span>
-          <article>
-            <span class="method-number">03</span>
-            <div class="glyph loop" aria-hidden="true"><b>↻</b></div>
-            <h3>Closed-loop interaction</h3>
-            <p>Execute, replan local goals, recover, and continue with the same policy.</p>
-          </article>
-        </div>
-
-        <div class="paper-window reveal">
-          <div class="paper-copy">
-            <span class="overline">FROM THE PAPER</span>
-            <h3>From approach to recovery</h3>
-            <p>
-              The learned behavior spans approach, lift, transport, and placement, while
-              retaining recovery behavior after perturbations or falls.
-            </p>
-            <a href="static/paper/I-BFM.pdf">Open the full manuscript ↗</a>
-          </div>
-          <a class="paper-preview" href="static/paper/I-BFM.pdf" aria-label="Open I-BFM paper">
-            <img src="static/images/paper-page-1.png" alt="First page of the I-BFM manuscript" loading="lazy" />
-          </a>
-        </div>
-      </section>
-
       <section class="section lab" id="interactive">
         <div class="section-head reveal">
-          <span class="section-index">03 / INTERACTIVE LAB</span>
+          <span class="section-index">02 / INTERACTIVE LAB</span>
           <h2>Probe the<br /><em>166.560M policy.</em></h2>
           <p>
             Explore recorded policy rollouts and the exact manual-controller state machine.
@@ -259,7 +207,7 @@
 
       <section class="section results dark" id="results">
         <div class="section-head inverse reveal">
-          <span class="section-index">04 / RESULTS</span>
+          <span class="section-index">03 / RESULTS</span>
           <h2>Robustness that<br /><em>survives contact.</em></h2>
           <p>
             The same learned policy handles nominal interaction, perturbation, and recovery.
