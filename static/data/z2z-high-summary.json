@@ -1,0 +1,26 @@
+{
+  "completed": false,
+  "final_goal_distance": 0.465900043226645,
+  "final_object_height": 0.7423473815086458,
+  "final_phase": "transport",
+  "max_lift": 0.6161873265944161,
+  "phase_counts": {
+    "approach": 192,
+    "complete": 0,
+    "get_up": 0,
+    "lift": 982,
+    "place": 0,
+    "place_direct": 0,
+    "push_contact": 0,
+    "push_direct": 0,
+    "push_direct_reposition": 0,
+    "push_direct_stop": 0,
+    "push_stop": 0,
+    "push_transport": 0,
+    "transport": 826
+  },
+  "step_count": 2000,
+  "transport_bilateral_contact_rate": 0.9552058111380145,
+  "transport_goalward_speed_mean": 0.07956177913900254,
+  "transport_lift_mean": 0.020950020297499667
+}
