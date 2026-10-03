@@ -2,38 +2,47 @@
 
 Static project page for **I-BFM: Reward-Conditioned Robust Humanoid Interaction via Unsupervised Reinforcement Learning**.
 
-
 ## Website
 
 - **Project website:** [https://iamhardworking.github.io/I-BFM/](https://iamhardworking.github.io/I-BFM/)
 - **Source repository:** [https://github.com/iamhardworking/I-BFM](https://github.com/iamhardworking/I-BFM)
-- **Local preview:** [http://localhost:8000](http://localhost:8000)
+- **Code repository:** [https://github.com/iamhardworking/I_BFM](https://github.com/iamhardworking/I_BFM)
 
-The public site is hosted from the standalone `iamhardworking/I-BFM` repository. The local URL works while the preview server below is running.
+## Live MuJoCo viewer
+
+The interactive section runs real MuJoCo WebAssembly physics and the original 166.560M-step FP32 ONNX actor in the browser. It is not a prerecorded trace or a CSS controller preview.
+
+- 1252-D actor input assembled from current robot/object/contact state, action history, privileged context, and the selected 256-D learned phase latent
+- 29-D joint-position action with the original action scaling, clipping, PD gains, joint limits, and 50 Hz policy rate
+- Automatic approach → lift → transport → align → lower → place controller
+- Manual learned-latent selection, movable target, box nudge, robot push, pause, and reset
+- The 129.1 MB actor is loaded only after the visitor clicks **Load live session**
+
+The actor is intentionally kept outside Git history. During Pages deployment, GitHub Actions downloads the public Release asset, verifies it, and injects it into the Pages artifact so browser loading is same-origin. Its expected SHA-256 is:
+
+```text
+198a8738a35c77e8dd901081e80877fbc2d18dcb6f79dc4c43bb8aa4dd5e45a2
+```
 
 ## Preview locally
 
-Run from this directory:
+Serve this directory over HTTP:
 
 ```bash
 python3 -m http.server 8000
 ```
 
-Then open <http://localhost:8000>. The HTTP server is required for loading the saved CSV traces used by the interactive z2z panel.
+Then open <http://localhost:8000>. To test with a local actor without copying it into this repository, expose it as `static/live-mujoco/model.onnx` and open:
 
-## Interactive modules
-
-- **Reward → z2z** loads three real 166.560M rollout videos, summaries, and CSV traces. The low and middle presets are completed placements; the high preset honestly reports that its 40-second recording window ended during transport.
-- **Manual carry** recreates the keyboard bindings and controller phase transitions saved with the 166.560M solve-close setup: arrow keys steer, `Down`/`Space` stop, `B` requests lift, `F` requests place, `P` prints state, and `R` resets. It is explicitly presented as a controller preview, not browser-side MuJoCo or ONNX inference.
+```text
+http://localhost:8000/static/live-mujoco/?model=./model.onnx
+```
 
 ## Main files
 
-- `index.html` — page structure and content
+- `index.html` — project page and lazy-loaded live viewer
 - `static/css/site.css` — responsive visual system
-- `static/js/site.js` — trace viewer, video presets, and manual controller preview
+- `static/js/site.js` — overview tabs, section navigation, and lazy viewer loading
+- `static/live-mujoco/` — generated browser viewer (MuJoCo + ONNX Runtime Web), licenses, and notices
 - `static/paper/I-BFM.pdf` — manuscript
-- `ebd2e43d024df6559dd51a95911e760d.mp4` — main project video and hero background
-- `static/video/` — interactive rollout videos
-- `static/data/` — copied experiment traces and summaries
-
-All runtime assets are local; the page has no CDN or package-manager dependency.
+- `ebd2e43d024df6559dd51a95911e760d.mp4` — project video and hero background

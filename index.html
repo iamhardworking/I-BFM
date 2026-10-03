@@ -11,8 +11,8 @@
     <title>I-BFM · Reward-Conditioned Humanoid Interaction</title>
     <link rel="icon" href="static/images/mark.svg" type="image/svg+xml" />
     <link rel="preload" href="static/images/hero-poster.jpg" as="image" fetchpriority="high" />
-    <link rel="stylesheet" href="static/css/site.css?v=no-representation-20261003" />
-    <script src="static/js/site.js?v=overview-tabs-20261003" defer></script>
+    <link rel="stylesheet" href="static/css/site.css?v=live-mujoco-20261003" />
+    <script src="static/js/site.js?v=live-mujoco-20261003" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -88,120 +88,33 @@
 
       </section>
 
-      <section class="section lab" id="interactive">
+      <section class="section lab live-lab" id="interactive">
         <div class="section-head reveal">
-          <span class="section-index">02 / INTERACTIVE LAB</span>
-          <h2>Probe the<br /><em>166.560M policy.</em></h2>
+          <span class="section-index">02 / LIVE MUJOCO</span>
+          <h2>Run the<br /><em>166.560M policy.</em></h2>
           <p>
-            Explore recorded policy rollouts and the exact manual-controller state machine.
-            The plots and status readouts below are driven by saved experiment traces.
+            Real MuJoCo physics and browser-side ONNX inference using the original FP32 actor.
+            Move the goal, select a learned phase latent, disturb the box, or push the robot while the policy runs closed loop.
           </p>
         </div>
 
-        <div class="lab-shell reveal">
-          <div class="lab-tabs" role="tablist" aria-label="Interactive demonstrations">
-            <button id="tab-z2z" class="active" type="button" role="tab" aria-selected="true" aria-controls="panel-z2z">
-              <span>01</span> Reward → z2z
-            </button>
-            <button id="tab-manual" type="button" role="tab" aria-selected="false" aria-controls="panel-manual">
-              <span>02</span> Manual carry
-            </button>
+        <div class="live-shell reveal">
+          <header class="live-shell-head">
+            <div><i class="live-dot"></i><strong>Live MuJoCo WASM + ONNX policy viewer</strong></div>
+            <a href="static/live-mujoco/index.html" target="_blank" rel="noopener">Open full page ↗</a>
+          </header>
+          <div class="live-embed" id="live-embed">
+            <div class="live-placeholder">
+              <span class="overline">ORIGINAL FP32 ACTOR · 166.560M STEPS</span>
+              <h3>Start a real browser simulation</h3>
+              <p>The viewer downloads a 129.1 MB policy only after you click. A desktop Chromium browser with WebAssembly is recommended.</p>
+              <button id="load-live-session" type="button">Load live session <span>→</span></button>
+            </div>
+            <iframe title="I-BFM live MuJoCo session" data-src="static/live-mujoco/index.html" allow="fullscreen" loading="lazy"></iframe>
           </div>
-
-          <div id="panel-z2z" class="lab-panel active" role="tabpanel" aria-labelledby="tab-z2z">
-            <div class="z2z-layout">
-              <div class="rollout-stage">
-                <video id="z2z-video" src="static/video/z2z-low.mp4" muted autoplay loop playsinline controls preload="metadata"></video>
-                <div class="video-hud">
-                  <span><i class="live-dot"></i> REAL ROLLOUT</span>
-                  <span id="z2z-phase">PHASE / LOADING</span>
-                </div>
-              </div>
-
-              <div class="control-dock">
-                <div>
-                  <span class="overline">LOCAL GOAL HEIGHT</span>
-                  <output id="height-output" for="height-slider">0.26 m</output>
-                </div>
-                <input id="height-slider" type="range" min="0.26" max="0.72" value="0.26" step="0.01" aria-label="Target object height" />
-                <div class="preset-row" aria-label="Height presets">
-                  <button class="preset active" type="button" data-preset="low">Low <span>0.26 m</span></button>
-                  <button class="preset" type="button" data-preset="mid">Mid <span>0.55 m</span></button>
-                  <button class="preset" type="button" data-preset="high">High <span>0.72 m</span></button>
-                </div>
-                <button id="random-preset" class="randomize" type="button">Randomize target <span>↻</span></button>
-              </div>
-            </div>
-
-            <div class="trace-panel">
-              <div class="trace-title">
-                <div><span class="overline">TRACE</span><strong>Closed-loop execution</strong></div>
-                <div class="legend"><span><i class="cyan"></i>Object height</span><span><i class="lime"></i>Goal distance</span></div>
-              </div>
-              <svg id="trace-chart" viewBox="0 0 900 210" role="img" aria-label="Object height and goal distance over rollout time">
-                <g class="grid-lines"></g>
-                <path id="height-path" class="trace-line height-line"></path>
-                <path id="distance-path" class="trace-line distance-line"></path>
-                <line id="trace-playhead" class="playhead" x1="0" y1="16" x2="0" y2="184"></line>
-                <g id="phase-bands"></g>
-              </svg>
-              <div class="metric-grid">
-                <div><span>Outcome</span><strong id="metric-outcome">—</strong></div>
-                <div><span>Final error</span><strong id="metric-distance">—</strong></div>
-                <div><span>Contact</span><strong id="metric-contact">—</strong></div>
-                <div><span>Horizon</span><strong id="metric-horizon">—</strong></div>
-              </div>
-            </div>
-          </div>
-
-          <div id="panel-manual" class="lab-panel" role="tabpanel" aria-labelledby="tab-manual" hidden>
-            <div class="manual-layout">
-              <div class="manual-stage" id="manual-stage" tabindex="0" aria-label="Keyboard-controlled carry state-machine preview">
-                <div class="floor-grid"></div>
-                <div id="goal-marker" class="goal-marker"><span>place zone</span></div>
-                <div id="box-object" class="box-object"><span>object</span></div>
-                <div id="robot-object" class="robot-object" aria-label="robot"><i></i><b></b></div>
-                <div class="manual-hud">
-                  <span><i class="live-dot"></i> CONTROLLER PREVIEW</span>
-                  <span id="manual-phase">PHASE / APPROACH</span>
-                </div>
-              </div>
-
-              <div class="manual-console">
-                <div class="console-head">
-                  <div><span class="overline">166.560M CONFIG</span><h3>Manual carry controller</h3></div>
-                  <button id="manual-reset" type="button">Reset</button>
-                </div>
-                <p>Click the stage, use the keyboard, or press the controls below.</p>
-                <div class="keyboard" aria-label="Manual controls">
-                  <button class="key key-up" data-key="ArrowUp" type="button"><kbd>↑</kbd><span>Forward</span></button>
-                  <button class="key key-left" data-key="ArrowLeft" type="button"><kbd>←</kbd><span>Turn</span></button>
-                  <button class="key key-down" data-key="ArrowDown" type="button"><kbd>↓</kbd><span>Stop</span></button>
-                  <button class="key key-right" data-key="ArrowRight" type="button"><kbd>→</kbd><span>Turn</span></button>
-                  <button class="key action lift" data-key="b" type="button"><kbd>B</kbd><span>Lift</span></button>
-                  <button class="key action place" data-key="f" type="button"><kbd>F</kbd><span>Place</span></button>
-                </div>
-                <div class="latent-readout">
-                  <span>ACTIVE LATENT</span>
-                  <strong id="active-latent">z_empty_idle</strong>
-                  <p id="manual-message">Move toward the object, then request lift.</p>
-                </div>
-              </div>
-            </div>
-            <div class="state-rail" aria-label="Controller phases">
-              <div class="active" data-phase="approach"><span>01</span><b>Approach</b><small>empty-hand latent</small></div>
-              <i>→</i>
-              <div data-phase="lift"><span>02</span><b>Lift</b><small>z_lift</small></div>
-              <i>→</i>
-              <div data-phase="transport"><span>03</span><b>Transport</b><small>manual blend 0.65</small></div>
-              <i>→</i>
-              <div data-phase="place"><span>04</span><b>Place</b><small>align · lower · release</small></div>
-            </div>
-            <p class="lab-note">
-              This module reproduces the saved manual-controller inputs and phase transitions;
-              it is a browser control preview, not MuJoCo physics or in-browser policy inference.
-            </p>
-          </div>
+          <footer class="live-shell-foot">
+            <span>MuJoCo 3D physics</span><span>ONNX Runtime Web</span><span>Original 1252-D observation</span><span>No prerecorded controls</span>
+          </footer>
         </div>
       </section>
 

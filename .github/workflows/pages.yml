@@ -1,0 +1,46 @@
+name: Deploy I-BFM Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+      - name: Assemble Pages artifact
+        run: |
+          mkdir -p _site
+          rsync -a --exclude=.git --exclude=.github --exclude=_site ./ _site/
+          curl --fail --location --retry 3 \
+            https://github.com/iamhardworking/I-BFM/releases/download/web-policy-166559744/ibfm-166559744-fp32.onnx \
+            --output _site/static/live-mujoco/model.onnx
+          echo "198a8738a35c77e8dd901081e80877fbc2d18dcb6f79dc4c43bb8aa4dd5e45a2  _site/static/live-mujoco/model.onnx" | sha256sum --check
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
