@@ -11,8 +11,8 @@
     <title>I-BFM · Reward-Conditioned Humanoid Interaction</title>
     <link rel="icon" href="static/images/mark.svg" type="image/svg+xml" />
     <link rel="preload" href="static/images/hero-poster.jpg" as="image" fetchpriority="high" />
-    <link rel="stylesheet" href="static/css/site.css?v=hero-poster-20261003" />
-    <script src="static/js/site.js" defer></script>
+    <link rel="stylesheet" href="static/css/site.css?v=overview-tabs-20261003" />
+    <script src="static/js/site.js?v=overview-tabs-20261003" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -65,21 +65,27 @@
         </a>
       </section>
 
-      <section class="section light" id="overview">
-        <div class="section-head reveal">
-          <span class="section-index">01 / OVERVIEW</span>
-          <h2>One policy.<br /><em>Many interactions.</em></h2>
-          <p>
-            I-BFM learns a shared representation of humanoid, object, and contact dynamics.
-            A downstream reward is converted into a latent command, then executed by the same
-            closed-loop policy—without task-specific policy optimization.
-          </p>
+      <section class="section light overview-section" id="overview">
+        <div class="overview-tabs reveal" role="tablist" aria-label="Overview media">
+          <button id="overview-tab-system" class="active" type="button" role="tab" aria-selected="true" aria-controls="overview-panel-system">
+            System overview
+          </button>
+          <button id="overview-tab-video" type="button" role="tab" aria-selected="false" aria-controls="overview-panel-video">
+            Video
+          </button>
         </div>
 
-        <div class="film reveal">
-          <video class="feature-video" src="ebd2e43d024df6559dd51a95911e760d.mp4" poster="static/images/hero-poster.jpg" controls muted playsinline preload="metadata"></video>
-          <button class="sound-toggle" type="button" aria-label="Toggle overview video sound">Sound off</button>
-          <span class="film-label">I-BFM / OVERVIEW</span>
+        <div class="overview-viewer reveal">
+          <div id="overview-panel-system" class="overview-panel system-panel active" role="tabpanel" aria-labelledby="overview-tab-system">
+            <img src="static/images/ibfm-system-overview.jpg" alt="I-BFM pre-training and reward inference system overview" />
+          </div>
+          <div id="overview-panel-video" class="overview-panel video-panel" role="tabpanel" aria-labelledby="overview-tab-video" hidden>
+            <div class="film">
+              <video class="feature-video" src="ebd2e43d024df6559dd51a95911e760d.mp4" poster="static/images/hero-poster.jpg" controls muted playsinline preload="metadata"></video>
+              <button class="sound-toggle" type="button" aria-label="Toggle overview video sound">Sound off</button>
+              <span class="film-label">I-BFM / OVERVIEW</span>
+            </div>
+          </div>
         </div>
 
         <div class="capability-strip reveal" aria-label="Demonstrated capabilities">
