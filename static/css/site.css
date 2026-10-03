@@ -69,7 +69,7 @@ video, img { display: block; max-width: 100%; }
 .hero-copy { position: relative; z-index: 2; min-height: 100svh; display: flex; align-items: center; justify-content: center; flex-direction: column; text-align: center; padding: 110px 6vw 90px; }
 .eyebrow, .overline { font-size: .65rem; font-weight: 700; text-transform: uppercase; letter-spacing: .2em; }
 .eyebrow { color: var(--acid); }
-.hero h1 { margin: .45rem 0 0; font-size: clamp(7rem, 20vw, 17rem); line-height: .8; letter-spacing: -.095em; font-weight: 800; }
+.hero h1 { margin: .45rem 0 0; font-size: clamp(2.8rem, 4.8vw, 4.25rem); line-height: 1.1; letter-spacing: -.03em; font-weight: 800; }
 .hero-title { margin: 2rem 0 .75rem; max-width: 850px; font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.3rem, 2.4vw, 2.2rem); line-height: 1.16; }
 .authors { color: #c5cecb; font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; }
 .hero-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: .7rem; margin-top: 1.5rem; }
@@ -256,7 +256,7 @@ footer { display: flex; align-items: center; justify-content: space-between; gap
   .topbar nav { display: none; }
   .mini-button { margin-left: auto; }
   .hero-grid { inset: 58px 0 0; }
-  .hero h1 { font-size: clamp(5.5rem, 30vw, 9rem); }
+  .hero h1 { font-size: 2.8rem; }
   .hero-title br { display: none; }
   .scroll-cue { left: 18px; }
   .section { padding: 90px 20px; }
@@ -284,6 +284,10 @@ footer { display: flex; align-items: center; justify-content: space-between; gap
   .scoreboard, .rollout-grid { grid-template-columns: 1fr; }
   .scoreboard article { border-right: 0; border-bottom: 1px solid var(--dark-line); }
   footer { flex-direction: column; align-items: flex-start; }
+}
+
+@media (max-width: 480px) {
+  .hero h1 { font-size: 2.2rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
