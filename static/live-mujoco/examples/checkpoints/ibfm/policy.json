@@ -341,5 +341,82 @@
       1.0,
       0.25866722135683
     ]
+  },
+  "task_latents_path": "./examples/checkpoints/ibfm/task_latents.json",
+  "task_profiles": {
+    "push": {
+      "label": "Push Box",
+      "config": "push_box_sucess-better_fix_best",
+      "evaluation": {
+        "box_xy_disturbance": "256/300 · 85.33%",
+        "robot_disturbance": "254/300 · 84.67%"
+      },
+      "initial_state": {
+        "root_pos": [
+          0,
+          0,
+          0.8
+        ],
+        "root_quat_wxyz": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "object_pos": [
+          1,
+          0,
+          0.186028293
+        ],
+        "object_quat_wxyz": [
+          -0.048914480954408646,
+          -0.09161601960659027,
+          0.9927757382392883,
+          -0.060084760189056396
+        ],
+        "goal_pos": [
+          3,
+          0,
+          0.186028293
+        ]
+      }
+    },
+    "kick": {
+      "label": "Kick Box",
+      "config": "kick_box_best",
+      "evaluation": {
+        "box_xy_disturbance": "239/300 · 79.67%",
+        "robot_disturbance": "260/300 · 86.67%"
+      },
+      "initial_state": {
+        "root_pos": [
+          0,
+          0,
+          0.8
+        ],
+        "root_quat_wxyz": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "object_pos": [
+          1,
+          0,
+          0.186028293
+        ],
+        "object_quat_wxyz": [
+          -0.048914480954408646,
+          -0.09161601960659027,
+          0.9927757382392883,
+          -0.060084760189056396
+        ],
+        "goal_pos": [
+          3,
+          0,
+          0.186028293
+        ]
+      }
+    }
   }
 }

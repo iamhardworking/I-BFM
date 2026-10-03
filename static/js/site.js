@@ -46,11 +46,12 @@ soundToggle?.addEventListener("click", () => {
   featureVideo.play().catch(() => {});
 });
 
-const loadLiveButton = document.querySelector("#load-live-session");
-loadLiveButton?.addEventListener("click", () => {
-  const embed = document.querySelector("#live-embed");
-  const frame = embed?.querySelector("iframe");
-  if (!frame || frame.src) return;
-  frame.src = frame.dataset.src;
-  embed.classList.add("loaded");
+document.querySelectorAll(".load-live-session").forEach((button) => {
+  button.addEventListener("click", () => {
+    const embed = button.closest(".live-embed");
+    const frame = embed?.querySelector("iframe");
+    if (!frame || frame.src) return;
+    frame.src = frame.dataset.src;
+    embed.classList.add("loaded");
+  });
 });

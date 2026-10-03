@@ -89,26 +89,83 @@
       </section>
 
       <section class="section lab live-lab" id="interactive">
-        <h2 class="live-title reveal">Live MuJoCo Session</h2>
+        <h2 class="live-title reveal">Live MuJoCo Sessions</h2>
+        <p class="live-intro reveal">Run the original 166.560M actor in browser-side MuJoCo. Each task loads its own frozen z2z latent controller; the 129.1 MB actor is shared by the browser cache.</p>
 
-        <div class="live-shell reveal">
-          <header class="live-shell-head">
-            <div><i class="live-dot"></i><strong>Live MuJoCo WASM + ONNX policy viewer</strong></div>
-            <a href="static/live-mujoco/index.html" target="_blank" rel="noopener">Open full page ↗</a>
-          </header>
-          <div class="live-embed" id="live-embed">
-            <div class="live-placeholder">
-              <span class="overline">ORIGINAL FP32 ACTOR · 166.560M STEPS</span>
-              <h3>Start a real browser simulation</h3>
-              <p>The viewer downloads a 129.1 MB policy only after you click. A desktop Chromium browser with WebAssembly is recommended.</p>
-              <button id="load-live-session" type="button">Load live session <span>→</span></button>
-            </div>
-            <iframe title="I-BFM live MuJoCo session" data-src="static/live-mujoco/index.html" allow="fullscreen" loading="lazy"></iframe>
+        <article class="interaction-demo reveal">
+          <div class="live-task-head">
+            <div><span class="overline">01 · CARRY BOX</span><h3>Approach, lift, transport, and place.</h3></div>
+            <p><strong>94.3%</strong> nominal carry success</p>
           </div>
-          <footer class="live-shell-foot">
-            <span>MuJoCo 3D physics</span><span>ONNX Runtime Web</span><span>Original 1252-D observation</span><span>No prerecorded controls</span>
-          </footer>
-        </div>
+          <div class="live-shell">
+            <header class="live-shell-head">
+              <div><i class="live-dot"></i><strong>166.560M Carry Z2Z · MuJoCo + ONNX</strong></div>
+              <a href="static/live-mujoco/index.html?task=carry" target="_blank" rel="noopener">Open full page ↗</a>
+            </header>
+            <div class="live-embed">
+              <div class="live-placeholder">
+                <span class="overline">ORIGINAL FP32 ACTOR · FROZEN CARRY LATENTS</span>
+                <h3>Start Carry Box</h3>
+                <p>Move the target, disturb the box, or push the robot while the closed-loop carry controller runs.</p>
+                <button class="load-live-session" type="button">Load carry session <span>→</span></button>
+              </div>
+              <iframe title="I-BFM Carry Box live MuJoCo session" data-src="static/live-mujoco/index.html?task=carry" allow="fullscreen" loading="lazy"></iframe>
+            </div>
+            <footer class="live-shell-foot">
+              <span>MuJoCo 3D physics</span><span>Original 1252-D observation</span><span>Physical contacts</span><span>No prerecorded controls</span>
+            </footer>
+          </div>
+        </article>
+
+        <article class="interaction-demo reveal">
+          <div class="live-task-head">
+            <div><span class="overline">02 · PUSH BOX</span><h3>Reposition, acquire, and push to goal.</h3></div>
+            <p><strong>85.33%</strong> box XY disturbance · <strong>84.67%</strong> robot disturbance</p>
+          </div>
+          <div class="live-shell">
+            <header class="live-shell-head">
+              <div><i class="live-dot"></i><strong>166.560M Push Z2Z · push_box_sucess-better_fix_best</strong></div>
+              <a href="static/live-mujoco/index.html?task=push" target="_blank" rel="noopener">Open full page ↗</a>
+            </header>
+            <div class="live-embed">
+              <div class="live-placeholder">
+                <span class="overline">FORMAL PUSH CONFIG · FROZEN DEPLOYMENT LATENTS</span>
+                <h3>Start Push Box</h3>
+                <p>Uses the formal push phase graph and the 0.20 m / 100-step success condition.</p>
+                <button class="load-live-session" type="button">Load push session <span>→</span></button>
+              </div>
+              <iframe title="I-BFM Push Box live MuJoCo session" data-src="static/live-mujoco/index.html?task=push" allow="fullscreen" loading="lazy"></iframe>
+            </div>
+            <footer class="live-shell-foot">
+              <span>Reposition → acquire → drive</span><span>Box disturbance</span><span>Robot disturbance</span><span>Closed-loop recovery</span>
+            </footer>
+          </div>
+        </article>
+
+        <article class="interaction-demo reveal">
+          <div class="live-task-head">
+            <div><span class="overline">03 · KICK BOX</span><h3>Direct drive, recovery, and goal hold.</h3></div>
+            <p><strong>79.67%</strong> box XY disturbance · <strong>86.67%</strong> robot disturbance</p>
+          </div>
+          <div class="live-shell">
+            <header class="live-shell-head">
+              <div><i class="live-dot"></i><strong>166.560M Kick Z2Z · kick_box_best</strong></div>
+              <a href="static/live-mujoco/index.html?task=kick" target="_blank" rel="noopener">Open full page ↗</a>
+            </header>
+            <div class="live-embed">
+              <div class="live-placeholder">
+                <span class="overline">FORMAL KICK CONFIG · FROZEN DEPLOYMENT LATENTS</span>
+                <h3>Start Kick Box</h3>
+                <p>Uses direct kick drive with the formal recovery route and the 0.20 m / 100-step success condition.</p>
+                <button class="load-live-session" type="button">Load kick session <span>→</span></button>
+              </div>
+              <iframe title="I-BFM Kick Box live MuJoCo session" data-src="static/live-mujoco/index.html?task=kick" allow="fullscreen" loading="lazy"></iframe>
+            </div>
+            <footer class="live-shell-foot">
+              <span>Direct kick drive</span><span>Box disturbance</span><span>Robot disturbance</span><span>Closed-loop recovery</span>
+            </footer>
+          </div>
+        </article>
       </section>
 
       <section class="section results dark" id="results">

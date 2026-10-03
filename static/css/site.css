@@ -301,6 +301,13 @@ footer { display: flex; align-items: center; justify-content: space-between; gap
 /* Real MuJoCo + ONNX session */
 .live-lab { background: #0a1010 !important; color: white; }
 .live-lab .section-head p { color: #aeb8b5; }
+.live-title { margin-bottom: .65rem; }
+.live-intro { max-width: 760px; margin: 0 0 clamp(3rem, 7vw, 6rem); color: #98a6a2; font-size: .82rem; line-height: 1.7; }
+.interaction-demo + .interaction-demo { margin-top: clamp(5rem, 10vw, 9rem); }
+.live-task-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 2rem; margin-bottom: 1.25rem; }
+.live-task-head h3 { max-width: 780px; margin: .45rem 0 0; font-size: clamp(1.8rem, 4vw, 3.8rem); line-height: .98; letter-spacing: -.045em; }
+.live-task-head p { max-width: 350px; margin: 0; color: #93a09d; font-size: .72rem; line-height: 1.55; text-align: right; }
+.live-task-head p strong { color: var(--acid); font-size: 1.05rem; }
 .live-shell { overflow: hidden; border: 1px solid rgba(255,255,255,.17); background: #101615; box-shadow: 0 34px 90px rgba(0,0,0,.34); }
 .live-shell-head, .live-shell-foot { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem 1.15rem; color: #dce4e1; background: #151b1a; font-size: .68rem; letter-spacing: .04em; }
 .live-shell-head div { display: flex; align-items: center; gap: .6rem; }
@@ -316,4 +323,4 @@ footer { display: flex; align-items: center; justify-content: space-between; gap
 .live-placeholder button { display: inline-flex; align-items: center; justify-content: space-between; gap: 2rem; min-width: 230px; padding: 1rem 1.15rem; border: 0; color: var(--ink); background: var(--acid); cursor: pointer; font-weight: 800; text-transform: uppercase; letter-spacing: .07em; }
 .live-shell-foot { justify-content: flex-start; flex-wrap: wrap; color: #85928e; text-transform: uppercase; font-size: .55rem; letter-spacing: .1em; }
 .live-shell-foot span + span::before { content: "·"; margin-right: 1rem; color: var(--acid); }
-@media (max-width: 760px) { .live-embed { min-height: 78vh; } .live-shell-head { align-items: flex-start; } .live-shell-head strong { display: block; max-width: 180px; } .live-shell-foot { display: none; } .live-placeholder { padding: 1.5rem; } }
+@media (max-width: 760px) { .live-task-head { display: block; } .live-task-head p { margin-top: 1rem; text-align: left; } .live-embed { min-height: 78vh; } .live-shell-head { align-items: flex-start; } .live-shell-head strong { display: block; max-width: 180px; } .live-shell-foot { display: none; } .live-placeholder { padding: 1.5rem; } }
