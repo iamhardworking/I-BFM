@@ -138,15 +138,17 @@ video, img { display: block; max-width: 100%; }
 .section-index { display: block; margin-bottom: .8rem; color: var(--blue); font-size: .75rem; font-weight: 700; letter-spacing: .08em; }
 .section-head h2 em { font-style: normal; font-weight: inherit; }
 .section-head p { margin: .9rem auto 0; color: var(--muted); font-size: 1rem; line-height: 1.7; }
-.result-condition { margin-bottom: 28px; padding: 1.5rem 1.7rem; border: 1px solid var(--line); border-radius: 12px; background: var(--soft); }
-.result-condition .section-index { margin-bottom: 1rem; }
+.result-scenario + .result-scenario { margin-top: 54px; }
+.result-condition { margin-bottom: 18px; padding: 1.5rem 1.7rem; border: 1px solid var(--line); border-radius: 12px; background: var(--soft); }
+.result-condition .section-index { margin-bottom: .35rem; }
+.result-condition h3 { margin: 0 0 1rem; font-size: 1.35rem; line-height: 1.3; }
 .result-condition dl { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.8rem; margin: 0; }
 .result-condition dt { color: var(--ink); font-size: .95rem; font-weight: 700; }
 .result-condition dd { margin: .35rem 0 0; color: var(--muted); font-size: .875rem; line-height: 1.6; }
 .result-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
 .result-card { overflow: hidden; border: 1px solid var(--line); border-radius: 12px; background: white; }
 .result-card-head { padding: 1.4rem 1.35rem 1.2rem; }
-.result-card h3 { margin: 0 0 .55rem; font-size: 1.4rem; line-height: 1.3; }
+.result-card h4 { margin: 0 0 .55rem; font-size: 1.4rem; line-height: 1.3; }
 .result-rate { display: block; color: var(--blue); font-size: clamp(3rem, 4.3vw, 4rem); font-weight: 700; line-height: 1.1; letter-spacing: -.055em; }
 .result-rate sup { font-size: .45em; vertical-align: top; }
 .result-card-head p { margin: .5rem 0 0; color: var(--muted); font-size: .875rem; }
@@ -201,6 +203,7 @@ footer p { margin: 0; }
   .live-shell-foot { display: none; }
   .result-condition dl, .result-grid { grid-template-columns: 1fr; }
   .result-condition { padding: 1.3rem; }
+  .result-scenario + .result-scenario { margin-top: 42px; }
   .result-condition dl { gap: 1.1rem; }
   .closing { min-height: 370px; }
   footer { flex-direction: column; align-items: flex-start; gap: .5rem; padding: 2rem 20px; }

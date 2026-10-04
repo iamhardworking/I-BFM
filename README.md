@@ -18,12 +18,30 @@ The interactive section runs real MuJoCo WebAssembly physics and the original 16
 - Movable target, box nudge, robot push, pause, and reset remain interactive in the carry session
 - The 129.1 MB actor is loaded only after the visitor clicks the **Load carry session** button
 
-The Results section reports the formal robot-disturbance (SR-R) 3×100
-evaluations: Carry `268/300 = 89.33%`, Push `254/300 = 84.67%`, and Kick
-`260/300 = 86.67%`. A single validated successful video per task is selected
-from the 12 complete SR-R recordings for that task. These selected examples are
-not used as the success-rate denominator. Carry uses a 3D `<0.20 m` goal criterion;
-Push and Kick use an XY `≤0.20 m` criterion, each held for 100 control steps.
+The Results section presents the formal 3×100 evaluations for three tasks and
+three conditions using the same 166.560M policy:
+
+| Condition | Carry Box | Push Box | Kick Box |
+| --- | ---: | ---: | ---: |
+| Nominal | 283/300 (94.33%) | 270/300 (90.00%) | 245/300 (81.67%) |
+| Box disturbance (SR-O) | 273/300 (91.00%) | 256/300 (85.33%) | 239/300 (79.67%) |
+| Robot disturbance (SR-R) | 268/300 (89.33%) | 254/300 (84.67%) | 260/300 (86.67%) |
+
+The corresponding local source report is
+`analysis/166.560M-push-kick-grid5x5-benchmark/EVAL_CARRY_PUSH_KICK_5X5_COMBINED.md`.
+Each cell shows one selected successful simulation video. The nominal Carry and
+box-disturbance Carry clips come from existing 166.560M recordings; the nominal
+and box-disturbance Push/Kick clips replay successful benchmark samples selected
+by seed and episode. The SR-R clips are selected from 12 validated recordings
+per task. Videos illustrate the condition; all reported success rates use 300
+evaluation episodes per task and condition.
+
+Carry uses a 3D `<0.20 m` goal criterion within 60 s. Push and Kick use an XY
+`≤0.20 m` criterion within 90 s. Each criterion must hold for 100 control
+steps. The box disturbance is a 200 N force for 0.2 s: downward for Carry,
+random fixed XY direction for Push/Kick with a 2 m flight limit. The robot
+disturbance is a 2,000 N downward pelvis force for 0.3 s. Disturbances trigger
+when the box first reaches half its initial XY distance to the goal.
 
 The actor is intentionally kept outside Git history. During Pages deployment, GitHub Actions downloads the public Release asset, verifies it, and injects it into the Pages artifact so browser loading is same-origin. Its expected SHA-256 is:
 
@@ -51,6 +69,6 @@ http://localhost:8000/static/live-mujoco/?model=./model.onnx
 - `static/css/site.css` — responsive visual system
 - `static/js/site.js` — overview tabs, section navigation, and lazy viewer loading
 - `static/live-mujoco/` — generated browser viewer (MuJoCo + ONNX Runtime Web), licenses, and notices
-- `static/video/srr-*.mp4` — representative Carry, Push, and Kick SR-R success rollouts
+- `static/video/{nominal,sro,srr}-*.mp4` — one representative success rollout per task and condition
 - `static/paper/I-BFM.pdf` — manuscript
 - `ebd2e43d024df6559dd51a95911e760d.mp4` — project video and hero background
