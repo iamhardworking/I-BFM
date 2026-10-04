@@ -98,6 +98,9 @@ video, img { display: block; max-width: 100%; }
 .system-panel { display: grid; place-items: center; min-height: 360px; overflow: hidden; background: white; }
 .system-panel img { width: 100%; max-height: 78vh; object-fit: contain; }
 .video-panel .feature-video { max-height: 78vh; }
+
+.abstract-block { max-width: 980px; margin: 88px auto 0; }
+.abstract-block p { margin: 1.4rem auto 0; color: var(--ink); font-size: 1rem; line-height: 1.8; text-align: left; }
 .film { position: relative; overflow: hidden; background: #18222c; }
 .feature-video { width: 100%; max-height: 75vh; object-fit: contain; background: #18222c; }
 .film-label, .sound-toggle { position: absolute; top: 16px; padding: .45rem .65rem; border-radius: 5px; color: white; background: rgba(15, 25, 35, .75); font-size: .75rem; }
@@ -184,6 +187,7 @@ footer p { margin: 0; }
   .overview-tabs button { flex: 1; min-width: 0; padding: .55rem .5rem; }
   .overview-viewer { padding: 7px; }
   .system-panel { min-height: 220px; }
+  .abstract-block { margin-top: 64px; }
   .live-intro { margin-bottom: 2.5rem; }
   .live-task-head { display: block; }
   .live-task-head p { margin-top: .7rem; text-align: left; }
