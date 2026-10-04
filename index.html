@@ -89,12 +89,12 @@
       </section>
 
       <section class="section lab live-lab" id="interactive">
-        <h2 class="live-title reveal">Live MuJoCo Sessions</h2>
-        <p class="live-intro reveal">Run the original 166.560M actor in browser-side MuJoCo. Each task loads its own frozen z2z latent controller; the 129.1 MB actor is shared by the browser cache.</p>
+        <h2 class="live-title reveal">Live MuJoCo Session</h2>
+        <p class="live-intro reveal">Run the original 166.560M actor in browser-side MuJoCo with the frozen carry z2z latent controller. The 129.1 MB actor loads when you start the session.</p>
 
         <article class="interaction-demo reveal">
           <div class="live-task-head">
-            <div><span class="overline">01 · CARRY BOX</span><h3>Approach, lift, transport, and place.</h3></div>
+            <div><span class="overline">CARRY BOX</span><h3>Approach, lift, transport, and place.</h3></div>
             <p><strong>94.3%</strong> nominal carry success</p>
           </div>
           <div class="live-shell">
@@ -117,55 +117,6 @@
           </div>
         </article>
 
-        <article class="interaction-demo reveal">
-          <div class="live-task-head">
-            <div><span class="overline">02 · PUSH BOX</span><h3>Reposition, acquire, and push to goal.</h3></div>
-            <p><strong>85.33%</strong> box XY disturbance · <strong>84.67%</strong> robot disturbance</p>
-          </div>
-          <div class="live-shell">
-            <header class="live-shell-head">
-              <div><i class="live-dot"></i><strong>166.560M Push Z2Z · push_box_sucess-better_fix_best</strong></div>
-              <a href="static/live-mujoco/index.html?task=push" target="_blank" rel="noopener">Open full page ↗</a>
-            </header>
-            <div class="live-embed">
-              <div class="live-placeholder">
-                <span class="overline">FORMAL PUSH CONFIG · FROZEN DEPLOYMENT LATENTS</span>
-                <h3>Start Push Box</h3>
-                <p>Uses the formal push phase graph and the 0.20 m / 100-step success condition.</p>
-                <button class="load-live-session" type="button">Load push session <span>→</span></button>
-              </div>
-              <iframe title="I-BFM Push Box live MuJoCo session" data-src="static/live-mujoco/index.html?task=push" allow="fullscreen" loading="lazy"></iframe>
-            </div>
-            <footer class="live-shell-foot">
-              <span>Reposition → acquire → drive</span><span>Box disturbance</span><span>Robot disturbance</span><span>Closed-loop recovery</span>
-            </footer>
-          </div>
-        </article>
-
-        <article class="interaction-demo reveal">
-          <div class="live-task-head">
-            <div><span class="overline">03 · KICK BOX</span><h3>Direct drive, recovery, and goal hold.</h3></div>
-            <p><strong>79.67%</strong> box XY disturbance · <strong>86.67%</strong> robot disturbance</p>
-          </div>
-          <div class="live-shell">
-            <header class="live-shell-head">
-              <div><i class="live-dot"></i><strong>166.560M Kick Z2Z · kick_box_best</strong></div>
-              <a href="static/live-mujoco/index.html?task=kick" target="_blank" rel="noopener">Open full page ↗</a>
-            </header>
-            <div class="live-embed">
-              <div class="live-placeholder">
-                <span class="overline">FORMAL KICK CONFIG · FROZEN DEPLOYMENT LATENTS</span>
-                <h3>Start Kick Box</h3>
-                <p>Uses direct kick drive with the formal recovery route and the 0.20 m / 100-step success condition.</p>
-                <button class="load-live-session" type="button">Load kick session <span>→</span></button>
-              </div>
-              <iframe title="I-BFM Kick Box live MuJoCo session" data-src="static/live-mujoco/index.html?task=kick" allow="fullscreen" loading="lazy"></iframe>
-            </div>
-            <footer class="live-shell-foot">
-              <span>Direct kick drive</span><span>Box disturbance</span><span>Robot disturbance</span><span>Closed-loop recovery</span>
-            </footer>
-          </div>
-        </article>
       </section>
 
       <section class="section results dark" id="results">

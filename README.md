@@ -14,17 +14,16 @@ The interactive section runs real MuJoCo WebAssembly physics and the original 16
 
 - 1252-D actor input assembled from current robot/object/contact state, action history, privileged context, and the selected 256-D learned phase latent
 - 29-D joint-position action with the original action scaling, clipping, PD gains, joint limits, and 50 Hz policy rate
-- Three lazy-loaded task routes share the same actor: [Carry](https://iamhardworking.github.io/I-BFM/static/live-mujoco/?task=carry), [Push](https://iamhardworking.github.io/I-BFM/static/live-mujoco/?task=push), and [Kick](https://iamhardworking.github.io/I-BFM/static/live-mujoco/?task=kick)
-- Carry retains its frozen approach/lift/transport/place/recovery stack; Push and Kick load their own frozen deployment latents and task phase graphs
-- Movable target, box nudge, robot push, pause, and reset remain interactive in every task
-- The 129.1 MB actor is loaded only after the visitor clicks a task's **Load session** button, then reused by the browser cache
+- The [Carry Box viewer](https://iamhardworking.github.io/I-BFM/static/live-mujoco/?task=carry) retains its frozen approach/lift/transport/place/recovery stack
+- Movable target, box nudge, robot push, pause, and reset remain interactive in the carry session
+- The 129.1 MB actor is loaded only after the visitor clicks the **Load carry session** button
 
 Reported success rates are from the formal CUDA 3×100 evaluations, not a
 browser-side benchmark: Carry nominal `283/300 = 94.3%`; Push box-XY
 disturbance `256/300 = 85.33%` and robot disturbance `254/300 = 84.67%`;
 Kick box-XY disturbance `239/300 = 79.67%` and robot disturbance
-`260/300 = 86.67%`. The online sessions run the original actor and frozen
-task latents through MuJoCo/ONNX WASM.
+`260/300 = 86.67%`. The online carry session runs the original actor and frozen
+carry latents through MuJoCo/ONNX WASM.
 
 The actor is intentionally kept outside Git history. During Pages deployment, GitHub Actions downloads the public Release asset, verifies it, and injects it into the Pages artifact so browser loading is same-origin. Its expected SHA-256 is:
 
@@ -48,7 +47,7 @@ http://localhost:8000/static/live-mujoco/?model=./model.onnx
 
 ## Main files
 
-- `index.html` — project page and lazy-loaded live viewer
+- `index.html` — project page and lazy-loaded carry viewer
 - `static/css/site.css` — responsive visual system
 - `static/js/site.js` — overview tabs, section navigation, and lazy viewer loading
 - `static/live-mujoco/` — generated browser viewer (MuJoCo + ONNX Runtime Web), licenses, and notices
