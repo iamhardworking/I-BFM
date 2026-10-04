@@ -46,6 +46,7 @@ video, img { display: block; max-width: 100%; }
 .topbar nav a:hover { color: var(--blue); }
 .mini-button { padding: .45rem .85rem; border: 1px solid var(--line); border-radius: 999px; font-size: .875rem; font-weight: 600; }
 .mini-button:hover { color: var(--blue); border-color: var(--blue); }
+.coming-soon { pointer-events: none; }
 
 .hero { position: relative; min-height: 100svh; overflow: hidden; color: white; background: #26313a; }
 .hero-grid { position: absolute; inset: 68px 0 0; overflow: hidden; background: #d7dce0 url("../images/hero-poster.jpg") center / cover no-repeat; }
