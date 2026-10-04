@@ -149,8 +149,7 @@ video, img { display: block; max-width: 100%; }
 .closing::after { content: ""; position: absolute; inset: 0; background: rgba(245, 249, 252, .9); }
 .closing > img { position: absolute; inset: -25% 0; width: 100%; opacity: .24; filter: grayscale(1) blur(3px); }
 .closing > div { position: relative; z-index: 2; padding: 5rem 1.5rem; }
-.closing .eyebrow { color: var(--blue); }
-.closing h2 { margin: .7rem 0 0; font-size: clamp(2.8rem, 4.5vw, 4rem); line-height: 1.1; letter-spacing: -.05em; }
+.closing h2 { margin: 0; font-size: clamp(2.8rem, 4.5vw, 4rem); line-height: 1.1; letter-spacing: -.05em; }
 .closing .button { color: var(--blue); border-color: var(--blue); }
 .closing .button:hover { color: white; background: var(--blue); }
 .closing .button.primary { color: white; background: var(--blue); border-color: var(--blue); }
