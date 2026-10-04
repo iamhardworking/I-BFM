@@ -18,6 +18,12 @@ The interactive section runs real MuJoCo WebAssembly physics and the original 16
 - Movable target, box nudge, robot push, pause, and reset remain interactive in the carry session
 - The 129.1 MB actor is loaded only after the visitor clicks the **Load carry session** button
 
+## Showcase videos
+
+The real-world showcase appears before Results in this order: Robust Carry Box,
+Robust Push Box, Robust Kick Box, and Robust Goal Reaching. All four published
+MP4 files have no audio track. Each video starts when scrolled into view and loops.
+
 The Results section presents the formal 3×100 evaluations for three tasks and
 three conditions using the same 166.560M policy:
 

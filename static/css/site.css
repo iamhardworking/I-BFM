@@ -124,9 +124,9 @@ video, img { display: block; max-width: 100%; }
 .live-placeholder button { display: inline-flex; align-items: center; gap: .75rem; min-height: 44px; padding: .65rem 1.1rem; border: 0; border-radius: 999px; color: white; background: var(--blue); cursor: pointer; font-size: .875rem; font-weight: 700; }
 .live-placeholder button:hover { background: var(--blue-dark); }
 
-.goal-reaching { border-bottom: 1px solid var(--line); }
-.goal-video-frame { max-width: 1120px; margin: 2.4rem auto 0; overflow: hidden; border: 1px solid var(--line); border-radius: 12px; background: #11191e; box-shadow: 0 14px 40px rgba(31, 52, 72, .08); }
-.goal-video-frame video { width: 100%; max-height: 75vh; object-fit: contain; }
+.showcase-section { border-bottom: 1px solid var(--line); }
+.showcase-video-frame { max-width: 1120px; margin: 2.4rem auto 0; overflow: hidden; border: 1px solid var(--line); border-radius: 12px; background: #11191e; box-shadow: 0 14px 40px rgba(31, 52, 72, .08); }
+.showcase-video-frame video { width: 100%; max-height: 75vh; object-fit: contain; }
 
 .section-head { max-width: 740px; margin: 0 auto 48px; text-align: center; }
 .section-index { display: block; margin-bottom: .8rem; color: var(--blue); font-size: .75rem; font-weight: 700; letter-spacing: .08em; }
