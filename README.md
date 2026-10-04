@@ -36,6 +36,12 @@ by seed and episode. The SR-R clips are selected from 12 validated recordings
 per task. Videos illustrate the condition; all reported success rates use 300
 evaluation episodes per task and condition.
 
+The box-disturbance Kick Box clip replays seed `166559744`, episode `27` from
+the formal benchmark. The replacement recording reaches the success criterion
+at 16.5 s after a complete 200 N, 0.2 s box disturbance, with zero physical
+hand-to-box contact steps and zero robot falls in its recorded trace. It uses a
+45° side camera to keep the foot interaction visible.
+
 Carry uses a 3D `<0.20 m` goal criterion within 60 s. Push and Kick use an XY
 `≤0.20 m` criterion within 90 s. Each criterion must hold for 100 control
 steps. The box disturbance is a 200 N force for 0.2 s: downward for Carry,

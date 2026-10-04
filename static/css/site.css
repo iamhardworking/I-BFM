@@ -87,6 +87,7 @@ video, img { display: block; max-width: 100%; }
 
 .overview-section { padding-top: 106px; }
 .overview-tabs { display: flex; gap: 8px; width: fit-content; margin: 0 auto 22px; }
+.overview-section .overview-tabs { margin-top: 2rem; }
 .overview-tabs button {
   min-width: 150px; min-height: 42px; padding: .55rem 1.1rem;
   border: 1px solid var(--line); border-radius: 999px; color: var(--muted);
