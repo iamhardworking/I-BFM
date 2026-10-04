@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="static/css/site.css?v=results-minimal-20261004" />
+    <link rel="stylesheet" href="static/css/site.css?v=live-minimal-20261004" />
     <script src="static/js/site.js?v=live-mujoco-20261003" defer></script>
   </head>
   <body>
@@ -94,33 +94,22 @@
 
       <section class="section lab live-lab" id="interactive">
         <h2 class="live-title reveal">Live MuJoCo Session</h2>
-        <p class="live-intro reveal">Run the original 166.560M actor in browser-side MuJoCo with the frozen carry z2z latent controller. The 129.1 MB actor loads when you start the session.</p>
 
         <article class="interaction-demo reveal">
           <div class="live-task-head">
-            <div><span class="overline">CARRY BOX</span><h3>Approach, lift, transport, and place.</h3></div>
-            <p><strong>94.3%</strong> nominal carry success</p>
+            <h3>Approach, lift, transport, and place.</h3>
           </div>
           <div class="live-shell">
-            <header class="live-shell-head">
-              <div><i class="live-dot"></i><strong>166.560M Carry Z2Z · MuJoCo + ONNX</strong></div>
-              <a href="static/live-mujoco/index.html?task=carry" target="_blank" rel="noopener">Open full page ↗</a>
-            </header>
             <div class="live-embed">
+              <a class="live-full-page" href="static/live-mujoco/index.html?task=carry&amp;v=live-minimal-20261004" target="_blank" rel="noopener" aria-label="Open Carry Box in a full page" title="Open full page">↗</a>
               <div class="live-placeholder">
-                <span class="overline">ORIGINAL FP32 ACTOR · FROZEN CARRY LATENTS</span>
                 <h3>Start Carry Box</h3>
-                <p>Move the target, disturb the box, or push the robot while the closed-loop carry controller runs.</p>
                 <button class="load-live-session" type="button">Load carry session <span>→</span></button>
               </div>
-              <iframe title="I-BFM Carry Box live MuJoCo session" data-src="static/live-mujoco/index.html?task=carry" allow="fullscreen" loading="lazy"></iframe>
+              <iframe title="I-BFM Carry Box live MuJoCo session" data-src="static/live-mujoco/index.html?task=carry&amp;v=live-minimal-20261004" allow="fullscreen" loading="lazy"></iframe>
             </div>
-            <footer class="live-shell-foot">
-              <span>MuJoCo 3D physics</span><span>Original 1252-D observation</span><span>Physical contacts</span><span>No prerecorded controls</span>
-            </footer>
           </div>
         </article>
-
       </section>
 
       <section class="section results dark" id="results">
