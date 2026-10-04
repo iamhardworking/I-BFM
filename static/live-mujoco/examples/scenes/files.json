@@ -1,5 +1,6 @@
 [
   "g1/g1_ibfm.xml",
+  "g1/g1_ibfm_keyboard.xml",
   "g1/meshes/head_link.STL",
   "g1/meshes/left_ankle_pitch_link.STL",
   "g1/meshes/left_ankle_roll_link.STL",
