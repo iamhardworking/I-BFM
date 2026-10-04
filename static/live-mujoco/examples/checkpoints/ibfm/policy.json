@@ -10,7 +10,7 @@
     "output": "action",
     "bytes": 129103000
   },
-  "latents_path": "./examples/checkpoints/ibfm/phase_latents.json",
+  "latents_path": "./examples/checkpoints/ibfm/phase_latents.json?v=keyboard-control-20261005",
   "policy_joint_names": [
     "left_hip_pitch_joint",
     "left_hip_roll_joint",

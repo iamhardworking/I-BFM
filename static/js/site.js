@@ -71,7 +71,15 @@ document.querySelectorAll(".load-live-session").forEach((button) => {
   button.addEventListener("click", () => {
     const embed = button.closest(".live-embed");
     const frame = embed?.querySelector("iframe");
-    if (!frame || frame.src) return;
+    if (!frame || frame.hasAttribute("src")) return;
+    document.querySelectorAll(".live-embed iframe[src]").forEach((other) => {
+      if (other === frame) return;
+      other.removeAttribute("src");
+      other.closest(".live-embed")?.classList.remove("loaded");
+    });
+    if (frame.hasAttribute("data-keyboard-control")) {
+      frame.addEventListener("load", () => frame.focus(), { once: true });
+    }
     frame.src = frame.dataset.src;
     embed.classList.add("loaded");
   });
