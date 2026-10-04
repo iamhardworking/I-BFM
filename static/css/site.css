@@ -110,10 +110,11 @@ video, img { display: block; max-width: 100%; }
 .sound-toggle { right: 16px; border: 1px solid rgba(255, 255, 255, .5); cursor: pointer; }
 
 .live-title { margin-bottom: 3rem; color: #111; }
+.live-lab { padding-right: max(20px, calc((100vw - 1280px) / 2)); padding-left: max(20px, calc((100vw - 1280px) / 2)); }
 .live-task-head { margin-bottom: 1.3rem; }
 .live-task-head h3 { margin: 0; color: #111; font-size: clamp(1.6rem, 2.35vw, 2rem); font-weight: 700; line-height: 1.3; letter-spacing: -.03em; }
 .live-shell { overflow: hidden; border: 1px solid var(--line); border-radius: 12px; background: white; box-shadow: 0 14px 40px rgba(31, 52, 72, .08); }
-.live-embed { position: relative; min-height: min(70vh, 750px); overflow: hidden; background: #17212b; }
+.live-embed { position: relative; min-height: clamp(680px, 80vh, 880px); overflow: hidden; background: #17212b; }
 .live-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; opacity: 0; pointer-events: none; transition: opacity .25s ease; }
 .live-embed.loaded iframe { opacity: 1; pointer-events: auto; }
 .live-full-page { position: absolute; z-index: 3; top: 16px; left: 16px; display: grid; place-items: center; width: 42px; height: 42px; border: 1px solid var(--line); border-radius: 50%; color: #111; background: white; font-size: 1.35rem; font-weight: 700; line-height: 1; }
