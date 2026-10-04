@@ -2,6 +2,27 @@ document.querySelectorAll("video[autoplay]").forEach((video) => {
   video.play().catch(() => {});
 });
 
+const autoplayOnViewVideos = document.querySelectorAll("video[data-autoplay-on-view]");
+const playVisibleVideo = (video) => {
+  video.muted = true;
+  video.play().catch(() => {});
+};
+const autoplayObserver = new IntersectionObserver(
+  (entries) => entries.forEach((entry) => {
+    if (entry.isIntersecting && !document.hidden) playVisibleVideo(entry.target);
+    else entry.target.pause();
+  }),
+  { rootMargin: "100px 0px", threshold: 0.1 }
+);
+autoplayOnViewVideos.forEach((video) => autoplayObserver.observe(video));
+document.addEventListener("visibilitychange", () => {
+  autoplayOnViewVideos.forEach((video) => {
+    const rect = video.getBoundingClientRect();
+    if (!document.hidden && rect.bottom > 0 && rect.top < window.innerHeight) playVisibleVideo(video);
+    else video.pause();
+  });
+});
+
 const revealObserver = new IntersectionObserver(
   (entries) => entries.forEach((entry) => entry.isIntersecting && entry.target.classList.add("visible")),
   { threshold: 0.08 }
