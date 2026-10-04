@@ -114,7 +114,6 @@ video, img { display: block; max-width: 100%; }
 .live-task-head { margin-bottom: 1.3rem; }
 .live-task-head h3 { margin: 0; color: #111; font-size: clamp(1.6rem, 2.35vw, 2rem); font-weight: 700; line-height: 1.3; letter-spacing: -.03em; }
 .keyboard-demo { margin-top: 5rem; }
-.keyboard-guide { margin: .6rem 0 0; color: var(--ink); font-size: 1rem; line-height: 1.6; }
 .live-shell { overflow: hidden; border: 1px solid var(--line); border-radius: 12px; background: white; box-shadow: 0 14px 40px rgba(31, 52, 72, .08); }
 .live-embed { position: relative; min-height: clamp(680px, 80vh, 880px); overflow: hidden; background: #17212b; }
 .live-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; opacity: 0; pointer-events: none; transition: opacity .25s ease; }

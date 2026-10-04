@@ -84,3 +84,38 @@ document.querySelectorAll(".load-live-session").forEach((button) => {
     embed.classList.add("loaded");
   });
 });
+
+const keyboardFrame = document.querySelector("#keyboard-control iframe[data-keyboard-control]");
+const keyboardCodes = new Set(["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight", "Space", "KeyB", "KeyF"]);
+const forwardedKeys = new Set();
+
+function sendKeyboardInput(code, action, repeat = false) {
+  if (!keyboardFrame?.hasAttribute("src")) return;
+  keyboardFrame.contentWindow?.postMessage({ type: "ibfm-keyboard", code, action, repeat }, window.location.origin);
+}
+
+function keyboardViewerVisible() {
+  if (!keyboardFrame?.hasAttribute("src")) return false;
+  const rect = keyboardFrame.getBoundingClientRect();
+  return rect.top < window.innerHeight && rect.bottom > 0 && rect.left < window.innerWidth && rect.right > 0;
+}
+
+window.addEventListener("keydown", (event) => {
+  if (!keyboardCodes.has(event.code) || event.altKey || event.ctrlKey || event.metaKey) return;
+  if (event.target.closest?.("input, textarea, select, [contenteditable]")) return;
+  if (!keyboardViewerVisible()) return;
+  event.preventDefault();
+  forwardedKeys.add(event.code);
+  sendKeyboardInput(event.code, "down", event.repeat);
+});
+
+window.addEventListener("keyup", (event) => {
+  if (!forwardedKeys.delete(event.code)) return;
+  event.preventDefault();
+  sendKeyboardInput(event.code, "up");
+});
+
+window.addEventListener("blur", () => {
+  for (const code of forwardedKeys) sendKeyboardInput(code, "up");
+  forwardedKeys.clear();
+});
