@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="static/css/site.css?v=live-minimal-20261004" />
+    <link rel="stylesheet" href="static/css/site.css?v=hero-clean-20261004" />
     <script src="static/js/site.js?v=live-mujoco-20261003" defer></script>
   </head>
   <body>
@@ -37,7 +37,7 @@
     <main id="main">
       <section class="hero" id="top">
         <div class="hero-grid" aria-hidden="true">
-          <video src="ebd2e43d024df6559dd51a95911e760d.mp4" poster="static/images/hero-poster.jpg" preload="auto" muted autoplay loop playsinline></video>
+          <video src="ebd2e43d024df6559dd51a95911e760d.mp4" poster="static/images/hero-poster.jpg" preload="auto" muted autoplay loop playsinline disablepictureinpicture disableremoteplayback></video>
         </div>
         <div class="hero-wash"></div>
         <div class="hero-copy">
@@ -54,9 +54,6 @@
             <a class="button" href="#interactive">Try interactions <span>↓</span></a>
           </div>
         </div>
-        <a class="scroll-cue" href="#overview" aria-label="Scroll to overview">
-          <span>SCROLL TO EXPLORE</span><b>↓</b>
-        </a>
       </section>
 
       <section class="section light overview-section" id="overview">
@@ -77,7 +74,7 @@
           </div>
           <div id="overview-panel-video" class="overview-panel video-panel" role="tabpanel" aria-labelledby="overview-tab-video" hidden>
             <div class="film">
-              <video class="feature-video" src="ebd2e43d024df6559dd51a95911e760d.mp4" poster="static/images/hero-poster.jpg" controls muted playsinline preload="metadata"></video>
+              <video class="feature-video" src="ebd2e43d024df6559dd51a95911e760d.mp4" poster="static/images/hero-poster.jpg" controls muted playsinline preload="metadata" disablepictureinpicture disableremoteplayback></video>
               <button class="sound-toggle" type="button" aria-label="Toggle overview video sound">Sound off</button>
               <span class="film-label">I-BFM / OVERVIEW</span>
             </div>
