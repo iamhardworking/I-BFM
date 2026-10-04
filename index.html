@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="static/css/site.css?v=results-grid-20261004" />
+    <link rel="stylesheet" href="static/css/site.css?v=results-minimal-20261004" />
     <script src="static/js/site.js?v=live-mujoco-20261003" defer></script>
   </head>
   <body>
@@ -125,134 +125,95 @@
 
       <section class="section results dark" id="results">
         <div class="section-head inverse reveal">
-          <span class="section-index">03 / RESULTS</span>
           <h2>Robustness across<br /><em>three conditions.</em></h2>
-          <p>The same 166.560M policy performs Carry, Push, and Kick under nominal, box-disturbance, and robot-disturbance conditions.</p>
         </div>
         <div class="result-scenario reveal" aria-labelledby="nominal-condition">
           <div class="result-condition">
-            <span class="section-index">NOMINAL</span>
             <h3 id="nominal-condition">No external disturbance.</h3>
-            <dl>
-              <div><dt>External force</dt><dd>None. This is the paired baseline for each task.</dd></div>
-              <div><dt>Evaluation</dt><dd>Three seeds × 100 episodes per task with the same 166.560M policy.</dd></div>
-              <div><dt>Success</dt><dd>Carry: 3D goal error < 0.20 m within 60 s. Push and Kick: XY error ≤ 0.20 m within 90 s. All must hold for 100 steps.</dd></div>
-            </dl>
           </div>
           <div class="result-grid">
             <article class="result-card">
               <div class="result-card-head">
                 <h4>Carry Box</h4>
-                <span class="result-rate">94.33<sup>%</sup></span>
-                <p>283 / 300 successful episodes</p>
+                <span class="result-rate" aria-label="94.33 percent success, 283 of 300 episodes">94.33<sup>%</sup></span>
               </div>
-              <video src="static/video/nominal-carry.mp4" poster="static/video/nominal-carry-poster.jpg" controls muted playsinline preload="none" aria-label="Carry Box: nominal simulation"></video>
-              <p class="result-caption">Representative successful nominal Carry rollout</p>
+              <video src="static/video/nominal-carry.mp4" poster="static/video/nominal-carry-poster.jpg" controls muted playsinline preload="none" aria-label="Carry Box: no external disturbance simulation"></video>
             </article>
             <article class="result-card">
               <div class="result-card-head">
                 <h4>Push Box</h4>
-                <span class="result-rate">90.00<sup>%</sup></span>
-                <p>270 / 300 successful episodes</p>
+                <span class="result-rate" aria-label="90.00 percent success, 270 of 300 episodes">90.00<sup>%</sup></span>
               </div>
-              <video src="static/video/nominal-push.mp4" poster="static/video/nominal-push-poster.jpg" controls muted playsinline preload="none" aria-label="Push Box: nominal simulation"></video>
-              <p class="result-caption">Representative successful nominal Push evaluation episode</p>
+              <video src="static/video/nominal-push.mp4" poster="static/video/nominal-push-poster.jpg" controls muted playsinline preload="none" aria-label="Push Box: no external disturbance simulation"></video>
             </article>
             <article class="result-card">
               <div class="result-card-head">
                 <h4>Kick Box</h4>
-                <span class="result-rate">81.67<sup>%</sup></span>
-                <p>245 / 300 successful episodes</p>
+                <span class="result-rate" aria-label="81.67 percent success, 245 of 300 episodes">81.67<sup>%</sup></span>
               </div>
-              <video src="static/video/nominal-kick.mp4" poster="static/video/nominal-kick-poster.jpg" controls muted playsinline preload="none" aria-label="Kick Box: nominal simulation"></video>
-              <p class="result-caption">Representative successful nominal Kick evaluation episode</p>
+              <video src="static/video/nominal-kick.mp4" poster="static/video/nominal-kick-poster.jpg" controls muted playsinline preload="none" aria-label="Kick Box: no external disturbance simulation"></video>
             </article>
           </div>
         </div>
 
         <div class="result-scenario reveal" aria-labelledby="sro-condition">
           <div class="result-condition">
-            <span class="section-index">BOX DISTURBANCE · SR-O</span>
             <h3 id="sro-condition">Box disturbance.</h3>
-            <dl>
-              <div><dt>Carry Box</dt><dd>200 N downward force on the box for 0.2 s.</dd></div>
-              <div><dt>Push / Kick Box</dt><dd>200 N in a random fixed XY direction for 0.2 s, with a 2 m box-flight limit.</dd></div>
-              <div><dt>Trigger</dt><dd>Apply once when the box first reaches half its initial XY distance to the goal.</dd></div>
-            </dl>
           </div>
           <div class="result-grid">
             <article class="result-card">
               <div class="result-card-head">
                 <h4>Carry Box</h4>
-                <span class="result-rate">91.00<sup>%</sup></span>
-                <p>273 / 300 successful episodes</p>
+                <span class="result-rate" aria-label="91.00 percent success, 273 of 300 episodes">91.00<sup>%</sup></span>
               </div>
-              <video src="static/video/sro-carry.mp4" poster="static/video/sro-carry-poster.jpg" controls muted playsinline preload="none" aria-label="Carry Box: box disturbance · sr-o simulation"></video>
-              <p class="result-caption">Representative successful SR-O Carry rollout</p>
+              <video src="static/video/sro-carry.mp4" poster="static/video/sro-carry-poster.jpg" controls muted playsinline preload="none" aria-label="Carry Box: box disturbance simulation"></video>
             </article>
             <article class="result-card">
               <div class="result-card-head">
                 <h4>Push Box</h4>
-                <span class="result-rate">85.33<sup>%</sup></span>
-                <p>256 / 300 successful episodes</p>
+                <span class="result-rate" aria-label="85.33 percent success, 256 of 300 episodes">85.33<sup>%</sup></span>
               </div>
-              <video src="static/video/sro-push.mp4" poster="static/video/sro-push-poster.jpg" controls muted playsinline preload="none" aria-label="Push Box: box disturbance · sr-o simulation"></video>
-              <p class="result-caption">Representative successful SR-O Push evaluation episode</p>
+              <video src="static/video/sro-push.mp4" poster="static/video/sro-push-poster.jpg" controls muted playsinline preload="none" aria-label="Push Box: box disturbance simulation"></video>
             </article>
             <article class="result-card">
               <div class="result-card-head">
                 <h4>Kick Box</h4>
-                <span class="result-rate">79.67<sup>%</sup></span>
-                <p>239 / 300 successful episodes</p>
+                <span class="result-rate" aria-label="79.67 percent success, 239 of 300 episodes">79.67<sup>%</sup></span>
               </div>
-              <video src="static/video/sro-kick.mp4" poster="static/video/sro-kick-poster.jpg" controls muted playsinline preload="none" aria-label="Kick Box: box disturbance · sr-o simulation"></video>
-              <p class="result-caption">Representative successful SR-O Kick evaluation episode</p>
+              <video src="static/video/sro-kick.mp4" poster="static/video/sro-kick-poster.jpg" controls muted playsinline preload="none" aria-label="Kick Box: box disturbance simulation"></video>
             </article>
           </div>
         </div>
 
         <div class="result-scenario reveal" aria-labelledby="srr-condition">
           <div class="result-condition">
-            <span class="section-index">ROBOT DISTURBANCE · SR-R</span>
             <h3 id="srr-condition">Robot disturbance.</h3>
-            <dl>
-              <div><dt>Force</dt><dd>2,000 N downward force on the pelvis for 0.3 s.</dd></div>
-              <div><dt>Trigger</dt><dd>Apply once when the box first reaches half its initial XY distance to the goal.</dd></div>
-              <div><dt>Evaluation</dt><dd>Three seeds × 100 episodes per task; the box disturbance is not applied in this condition.</dd></div>
-            </dl>
           </div>
           <div class="result-grid">
             <article class="result-card">
               <div class="result-card-head">
                 <h4>Carry Box</h4>
-                <span class="result-rate">89.33<sup>%</sup></span>
-                <p>268 / 300 successful episodes</p>
+                <span class="result-rate" aria-label="89.33 percent success, 268 of 300 episodes">89.33<sup>%</sup></span>
               </div>
-              <video src="static/video/srr-carry.mp4" poster="static/video/srr-carry-poster.jpg" controls muted playsinline preload="none" aria-label="Carry Box: robot disturbance · sr-r simulation"></video>
-              <p class="result-caption">One of 12 validated SR-R Carry recordings</p>
+              <video src="static/video/srr-carry.mp4" poster="static/video/srr-carry-poster.jpg" controls muted playsinline preload="none" aria-label="Carry Box: robot disturbance simulation"></video>
             </article>
             <article class="result-card">
               <div class="result-card-head">
                 <h4>Push Box</h4>
-                <span class="result-rate">84.67<sup>%</sup></span>
-                <p>254 / 300 successful episodes</p>
+                <span class="result-rate" aria-label="84.67 percent success, 254 of 300 episodes">84.67<sup>%</sup></span>
               </div>
-              <video src="static/video/srr-push.mp4" poster="static/video/srr-push-poster.jpg" controls muted playsinline preload="none" aria-label="Push Box: robot disturbance · sr-r simulation"></video>
-              <p class="result-caption">One of 12 validated SR-R Push recordings</p>
+              <video src="static/video/srr-push.mp4" poster="static/video/srr-push-poster.jpg" controls muted playsinline preload="none" aria-label="Push Box: robot disturbance simulation"></video>
             </article>
             <article class="result-card">
               <div class="result-card-head">
                 <h4>Kick Box</h4>
-                <span class="result-rate">86.67<sup>%</sup></span>
-                <p>260 / 300 successful episodes</p>
+                <span class="result-rate" aria-label="86.67 percent success, 260 of 300 episodes">86.67<sup>%</sup></span>
               </div>
-              <video src="static/video/srr-kick.mp4" poster="static/video/srr-kick-poster.jpg" controls muted playsinline preload="none" aria-label="Kick Box: robot disturbance · sr-r simulation"></video>
-              <p class="result-caption">One of 12 validated SR-R Kick recordings</p>
+              <video src="static/video/srr-kick.mp4" poster="static/video/srr-kick-poster.jpg" controls muted playsinline preload="none" aria-label="Kick Box: robot disturbance simulation"></video>
             </article>
           </div>
         </div>
 
-        <p class="result-note reveal">Each rate uses all 300 evaluation episodes. Videos show selected successful rollouts, not the evaluation denominator. Carry and Push/Kick use different goal-distance criteria, so compare conditions within each task.</p>
       </section>
 
       <section class="closing">
