@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="static/css/site.css?v=abstract-20261004" />
+    <link rel="stylesheet" href="static/css/site.css?v=srr-results-20261004" />
     <script src="static/js/site.js?v=live-mujoco-20261003" defer></script>
   </head>
   <body>
@@ -126,33 +126,49 @@
       <section class="section results dark" id="results">
         <div class="section-head inverse reveal">
           <span class="section-index">03 / RESULTS</span>
-          <h2>Robustness that<br /><em>survives contact.</em></h2>
-          <p>
-            The same learned policy handles nominal interaction, perturbation, and recovery.
-            Reported carry results come directly from the manuscript.
-          </p>
+          <h2>Robustness under<br /><em>robot disturbance.</em></h2>
+          <p>Carry, push, and kick are evaluated with the same 166.560M policy under a strong robot disturbance.</p>
         </div>
 
-        <div class="scoreboard reveal">
-          <article><span class="score">94.3<sup>%</sup></span><p>Nominal carry success</p></article>
-          <article><span class="score">89.3<sup>%</sup></span><p>Carry success after robot falls</p></article>
-          <article><span class="score accent">1.3<sup>%</sup></span><p>Planning baseline after falls</p></article>
+        <div class="result-condition reveal" aria-label="Evaluation condition">
+          <span class="section-index">EVALUATION CONDITION · SR-R</span>
+          <dl>
+            <div><dt>Robot disturbance</dt><dd>At the box-goal XY midpoint, apply a 2,000 N downward force to the pelvis for 0.3 s.</dd></div>
+            <div><dt>Evaluation</dt><dd>Three seeds × 100 episodes per task. Carry runs for up to 60 s; push and kick for up to 90 s.</dd></div>
+            <div><dt>Success</dt><dd>Within 0.20 m of the goal for 100 consecutive steps: 3D for carry, XY for push and kick.</dd></div>
+          </dl>
         </div>
 
-        <div class="rollout-grid reveal">
-          <article>
-            <video src="static/video/z2z-low.mp4" muted autoplay loop playsinline></video>
-            <div><span>LOW GOAL</span><b>Approach → carry → place</b></div>
+        <div class="result-grid reveal">
+          <article class="result-card">
+            <div class="result-card-head">
+              <h3>Carry Box</h3>
+              <span class="result-rate">89.33<sup>%</sup></span>
+              <p>268 / 300 successful episodes</p>
+            </div>
+            <video src="static/video/srr-carry.mp4" poster="static/video/srr-carry-poster.jpg" controls muted playsinline preload="metadata" aria-label="Carry Box: successful simulation under robot disturbance"></video>
+            <p class="result-caption">Representative SR-R success · one of 12 validated carry recordings</p>
           </article>
-          <article>
-            <video src="static/video/z2z-mid.mp4" muted autoplay loop playsinline></video>
-            <div><span>MID GOAL</span><b>Reward-conditioned placement</b></div>
+          <article class="result-card">
+            <div class="result-card-head">
+              <h3>Push Box</h3>
+              <span class="result-rate">84.67<sup>%</sup></span>
+              <p>254 / 300 successful episodes</p>
+            </div>
+            <video src="static/video/srr-push.mp4" poster="static/video/srr-push-poster.jpg" controls muted playsinline preload="metadata" aria-label="Push Box: successful simulation under robot disturbance"></video>
+            <p class="result-caption">Representative SR-R success · one of 12 validated push recordings</p>
           </article>
-          <article>
-            <video src="static/video/z2z-high.mp4" muted autoplay loop playsinline></video>
-            <div><span>HIGH GOAL</span><b>Long-horizon transport</b></div>
+          <article class="result-card">
+            <div class="result-card-head">
+              <h3>Kick Box</h3>
+              <span class="result-rate">86.67<sup>%</sup></span>
+              <p>260 / 300 successful episodes</p>
+            </div>
+            <video src="static/video/srr-kick.mp4" poster="static/video/srr-kick-poster.jpg" controls muted playsinline preload="metadata" aria-label="Kick Box: successful simulation under robot disturbance"></video>
+            <p class="result-caption">Representative SR-R success · one of 12 validated kick recordings</p>
           </article>
         </div>
+        <p class="result-note reveal">Success rates use all 300 evaluation episodes per task. The videos are selected examples, not the evaluation denominator.</p>
       </section>
 
       <section class="closing">

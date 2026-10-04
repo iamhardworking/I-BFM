@@ -18,12 +18,12 @@ The interactive section runs real MuJoCo WebAssembly physics and the original 16
 - Movable target, box nudge, robot push, pause, and reset remain interactive in the carry session
 - The 129.1 MB actor is loaded only after the visitor clicks the **Load carry session** button
 
-Reported success rates are from the formal CUDA 3×100 evaluations, not a
-browser-side benchmark: Carry nominal `283/300 = 94.3%`; Push box-XY
-disturbance `256/300 = 85.33%` and robot disturbance `254/300 = 84.67%`;
-Kick box-XY disturbance `239/300 = 79.67%` and robot disturbance
-`260/300 = 86.67%`. The online carry session runs the original actor and frozen
-carry latents through MuJoCo/ONNX WASM.
+The Results section reports the formal robot-disturbance (SR-R) 3×100
+evaluations: Carry `268/300 = 89.33%`, Push `254/300 = 84.67%`, and Kick
+`260/300 = 86.67%`. A single validated successful video per task is selected
+from the 12 complete SR-R recordings for that task. These selected examples are
+not used as the success-rate denominator. Carry uses a 3D `<0.20 m` goal criterion;
+Push and Kick use an XY `≤0.20 m` criterion, each held for 100 control steps.
 
 The actor is intentionally kept outside Git history. During Pages deployment, GitHub Actions downloads the public Release asset, verifies it, and injects it into the Pages artifact so browser loading is same-origin. Its expected SHA-256 is:
 
@@ -51,5 +51,6 @@ http://localhost:8000/static/live-mujoco/?model=./model.onnx
 - `static/css/site.css` — responsive visual system
 - `static/js/site.js` — overview tabs, section navigation, and lazy viewer loading
 - `static/live-mujoco/` — generated browser viewer (MuJoCo + ONNX Runtime Web), licenses, and notices
+- `static/video/srr-*.mp4` — representative Carry, Push, and Kick SR-R success rollouts
 - `static/paper/I-BFM.pdf` — manuscript
 - `ebd2e43d024df6559dd51a95911e760d.mp4` — project video and hero background
