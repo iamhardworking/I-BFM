@@ -39,8 +39,8 @@ video, img { display: block; max-width: 100%; }
   color: var(--ink); background: rgba(255, 255, 255, .94);
   backdrop-filter: blur(14px);
 }
-.brand { display: inline-flex; align-items: center; gap: .65rem; font-size: 1rem; font-weight: 800; letter-spacing: -.025em; }
-.brand-mark { width: 23px; height: 23px; border-radius: 5px; background: var(--blue); }
+.brand { display: inline-flex; align-items: center; flex: none; }
+.brand-logo { width: auto; height: 43px; }
 .topbar nav { display: flex; gap: 1.7rem; margin-left: auto; }
 .topbar nav a { color: var(--muted); font-size: .875rem; font-weight: 600; }
 .topbar nav a:hover { color: var(--blue); }
@@ -165,6 +165,7 @@ footer p { margin: 0; }
 @media (max-width: 760px) {
   html { scroll-padding-top: 58px; }
   .topbar { height: 58px; padding: 0 18px; }
+  .topbar .brand-logo { height: 37px; }
   .topbar nav { display: none; }
   .mini-button { margin-left: auto; }
   .hero-grid, .hero-wash { top: 58px; }
