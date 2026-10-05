@@ -68,19 +68,26 @@ soundToggle?.addEventListener("click", () => {
 });
 
 document.querySelectorAll(".load-live-session").forEach((button) => {
+  const embed = button.closest(".live-embed");
+  const frame = embed?.querySelector("iframe");
+  frame?.addEventListener("load", () => {
+    const active = embed.classList.contains("loaded");
+    frame.contentWindow?.postMessage({ type: "ibfm-visibility", active }, window.location.origin);
+    if (active && frame.hasAttribute("data-keyboard-control")) frame.focus();
+  });
   button.addEventListener("click", () => {
-    const embed = button.closest(".live-embed");
-    const frame = embed?.querySelector("iframe");
-    if (!frame || frame.hasAttribute("src")) return;
+    if (!frame) return;
     document.querySelectorAll(".live-embed iframe[src]").forEach((other) => {
       if (other === frame) return;
-      other.removeAttribute("src");
+      other.contentWindow?.postMessage({ type: "ibfm-visibility", active: false }, window.location.origin);
       other.closest(".live-embed")?.classList.remove("loaded");
     });
-    if (frame.hasAttribute("data-keyboard-control")) {
-      frame.addEventListener("load", () => frame.focus(), { once: true });
+    if (!frame.hasAttribute("src")) {
+      frame.src = frame.dataset.src;
+    } else {
+      frame.contentWindow?.postMessage({ type: "ibfm-visibility", active: true }, window.location.origin);
     }
-    frame.src = frame.dataset.src;
+    if (frame.hasAttribute("data-keyboard-control")) frame.focus();
     embed.classList.add("loaded");
   });
 });
@@ -95,7 +102,7 @@ function sendKeyboardInput(code, action, repeat = false) {
 }
 
 function keyboardViewerVisible() {
-  if (!keyboardFrame?.hasAttribute("src")) return false;
+  if (!keyboardFrame?.closest(".live-embed")?.classList.contains("loaded")) return false;
   const rect = keyboardFrame.getBoundingClientRect();
   return rect.top < window.innerHeight && rect.bottom > 0 && rect.left < window.innerWidth && rect.right > 0;
 }
