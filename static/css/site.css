@@ -103,7 +103,7 @@ video, img { display: block; max-width: 100%; }
 .overview-tabs button {
   min-width: 170px; min-height: 48px; padding: .6rem 1.2rem;
   border: 1px solid var(--line); border-radius: 999px; color: var(--muted);
-  background: white; cursor: pointer; font-size: 1.1rem; font-weight: 600;
+  background: white; cursor: pointer; font-size: 1.2rem; font-weight: 600;
 }
 .overview-tabs button:hover { color: var(--blue); border-color: var(--blue); }
 .overview-tabs button.active { color: white; background: var(--blue); border-color: var(--blue); }
@@ -164,7 +164,7 @@ video, img { display: block; max-width: 100%; }
 .closing > img { position: absolute; inset: -25% 0; width: 100%; opacity: .24; filter: grayscale(1) blur(3px); }
 .closing > div { position: relative; z-index: 2; padding: 5rem 1.5rem; }
 .closing h2 { margin: 0; font-size: clamp(2.8rem, 4.5vw, 4rem); line-height: 1.1; letter-spacing: -.05em; }
-.closing .button { color: var(--blue); border-color: var(--blue); }
+.closing .button { color: var(--blue); border-color: var(--blue); font-size: 1.2rem; }
 .closing .button:hover { color: white; background: var(--blue); }
 .closing .button.primary { color: white; background: var(--blue); border-color: var(--blue); }
 .closing .button.primary:hover { background: var(--blue-dark); border-color: var(--blue-dark); }
@@ -192,6 +192,7 @@ footer p { margin: 0; }
   .affiliation-list { column-gap: .8rem; font-size: 1.2rem; }
   .author-note { font-size: 1.08rem; }
   .author-actions .button { font-size: 1.08rem; }
+  .overview-tabs button, .closing .button { font-size: 1.08rem; }
   .author-actions { flex-direction: column; align-items: center; }
   .author-actions .button { width: min(100%, 280px); }
   .section { padding: 72px 20px; }
