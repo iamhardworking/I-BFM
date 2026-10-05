@@ -41,24 +41,6 @@ const sectionObserver = new IntersectionObserver(
 );
 document.querySelectorAll("main section[id]").forEach((section) => sectionObserver.observe(section));
 
-document.querySelectorAll(".overview-tabs button").forEach((button) => {
-  button.addEventListener("click", () => {
-    document.querySelectorAll(".overview-tabs button").forEach((item) => {
-      const active = item === button;
-      item.classList.toggle("active", active);
-      item.setAttribute("aria-selected", String(active));
-    });
-    document.querySelectorAll(".overview-panel").forEach((panel) => {
-      const active = panel.id === button.getAttribute("aria-controls");
-      panel.classList.toggle("active", active);
-      panel.hidden = !active;
-    });
-    const featureVideo = document.querySelector(".feature-video");
-    if (button.id === "overview-tab-video") featureVideo?.play().catch(() => {});
-    else featureVideo?.pause();
-  });
-});
-
 const soundToggle = document.querySelector(".sound-toggle");
 const featureVideo = document.querySelector(".feature-video");
 soundToggle?.addEventListener("click", () => {

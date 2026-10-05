@@ -14,8 +14,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="static/css/site.css?v=button-type-unified-20261005" />
-    <script src="static/js/site.js?v=shared-live-session-20261005" defer></script>
+    <link rel="stylesheet" href="static/css/site.css?v=overview-stack-20261005" />
+    <script src="static/js/site.js?v=overview-stack-20261005" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -82,25 +82,16 @@
 
       <section class="section light overview-section" id="overview">
         <h2 class="section-title reveal">Overview</h2>
-        <div class="overview-tabs reveal" role="tablist" aria-label="Overview media">
-          <button id="overview-tab-system" class="active" type="button" role="tab" aria-selected="true" aria-controls="overview-panel-system">
-            System overview
-          </button>
-          <button id="overview-tab-video" type="button" role="tab" aria-selected="false" aria-controls="overview-panel-video">
-            Video
-          </button>
-        </div>
-
-        <div class="overview-viewer reveal">
-          <div id="overview-panel-system" class="overview-panel system-panel active" role="tabpanel" aria-labelledby="overview-tab-system">
-            <img src="static/images/ibfm-system-overview.jpg" alt="I-BFM pre-training and reward inference system overview" />
-          </div>
-          <div id="overview-panel-video" class="overview-panel video-panel" role="tabpanel" aria-labelledby="overview-tab-video" hidden>
+        <div class="overview-stack">
+          <div class="overview-viewer video-panel reveal">
             <div class="film">
-              <video class="feature-video" src="ebd2e43d024df6559dd51a95911e760d.mp4" poster="static/images/hero-poster.jpg" controls loop muted playsinline preload="metadata" disablepictureinpicture disableremoteplayback></video>
+              <video class="feature-video" src="ebd2e43d024df6559dd51a95911e760d.mp4" poster="static/images/hero-poster.jpg" data-autoplay-on-view controls loop muted playsinline preload="metadata" disablepictureinpicture disableremoteplayback aria-label="I-BFM overview video"></video>
               <button class="sound-toggle" type="button" aria-label="Toggle overview video sound">Sound off</button>
               <span class="film-label">I-BFM / OVERVIEW</span>
             </div>
+          </div>
+          <div class="overview-viewer system-panel reveal">
+            <img src="static/images/ibfm-system-overview.jpg" alt="I-BFM pre-training and reward inference system overview" />
           </div>
         </div>
 
