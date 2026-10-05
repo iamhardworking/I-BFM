@@ -61,7 +61,6 @@ video, img { display: block; max-width: 100%; }
 .eyebrow { color: #fff; }
 .hero h1 { margin: .55rem 0 0; font-size: clamp(3.4rem, 5.6vw, 5rem); font-weight: 800; line-height: 1.08; letter-spacing: -.035em; }
 .hero-title { max-width: 900px; margin: .8rem 0 0; font-size: clamp(1.55rem, 2.8vw, 2.45rem); font-weight: 500; line-height: 1.3; letter-spacing: -.025em; }
-.authors { margin: 1.2rem 0 0; font-size: 1.1rem; font-weight: 600; }
 .hero-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: .7rem; margin-top: 1.8rem; text-shadow: none; }
 .button {
   display: inline-flex; align-items: center; justify-content: center; gap: .9rem;
@@ -74,6 +73,13 @@ video, img { display: block; max-width: 100%; }
 .button.primary:hover { color: white; background: var(--blue); border-color: var(--blue); }
 .hero-copy .button { min-height: 52px; padding: .8rem 1.35rem; font-size: 1rem; }
 .hero-copy .button > span { font-size: 1.3rem; font-weight: 800; line-height: 1; }
+
+.author-info { padding: 44px 24px 42px; text-align: center; background: white; }
+.author-list, .affiliation-list { display: flex; justify-content: center; flex-wrap: wrap; column-gap: 1.1rem; row-gap: .15rem; max-width: 1100px; margin: 0 auto; }
+.author-list { color: var(--blue); font-size: 1.05rem; font-weight: 600; line-height: 1.9; }
+.author-info sup { position: relative; top: -.1em; margin-left: .08em; font-size: .68em; line-height: 0; }
+.affiliation-list { max-width: 980px; margin-top: .7rem; color: var(--ink); font-size: .95rem; line-height: 1.8; }
+.author-note { margin: .7rem 0 0; color: var(--muted); font-size: .82rem; font-style: italic; }
 
 .section { padding: 96px max(24px, calc((100vw - 1120px) / 2)); }
 .section.light { background: var(--paper); }
@@ -173,9 +179,11 @@ footer p { margin: 0; }
   .hero h1 { font-size: clamp(3rem, 13vw, 3.6rem); }
   .hero-title { font-size: clamp(1.4rem, 5vw, 1.75rem); }
   .hero-title br { display: none; }
-  .authors { font-size: 1rem; }
   .hero-actions { flex-direction: column; align-items: center; width: 100%; }
   .hero-actions .button { width: min(100%, 280px); }
+  .author-info { padding: 32px 20px; }
+  .author-list { column-gap: .8rem; font-size: .96rem; }
+  .affiliation-list { column-gap: .8rem; font-size: .88rem; }
   .section { padding: 72px 20px; }
   .overview-section { padding-top: 84px; }
   .section-title, .live-title, .section-head h2 { font-size: clamp(1.9rem, 8vw, 2.3rem); }
