@@ -252,8 +252,8 @@
       </body>
     </body>
     <geom name="sim2sim_floor" type="plane" pos="0 0 0" size="20 20 0.05" rgba="0.10 0.12 0.13 1" friction="0.9 0.01 0.001" contype="1" conaffinity="1" group="0" />
-    <geom name="initial_box_support" type="box" pos="3.69271203447 -0.84556226549 0" size="0.2 0.2 0.01" rgba="0.10 0.62 0.82 1" friction="0.9 0.01 0.001" contype="0" conaffinity="0" group="0" />
-    <body name="sim2sim_carry_box" pos="3.69271206856 -0.845562279224 0.187843">
+    <geom name="initial_box_support" type="box" pos="1.2 0 0" size="0.2 0.2 0.01" rgba="0.10 0.62 0.82 1" friction="0.9 0.01 0.001" contype="0" conaffinity="0" group="0" />
+    <body name="sim2sim_carry_box" pos="1.2 0 0.187843">
       <freejoint name="sim2sim_carry_box_joint" />
       <geom name="sim2sim_carry_box_geom" type="box" size="0.1675266 0.1688563 0.1800429" pos="0.00102584 -0.00160677 0.00637628" quat="0.07016202 0.97153219 0.22227911 0.04236142" rgba="0.88 0.42 0.10 1" friction="0.9 0.01 0.001" condim="3" mass="0.7" contype="2" conaffinity="5" group="0" />
     </body>
