@@ -6,7 +6,7 @@ Static project page for **I-BFM: Reward-Conditioned Robust Humanoid Interaction 
 
 - **Project website:** [https://iamhardworking.github.io/I-BFM/](https://iamhardworking.github.io/I-BFM/)
 - **Source repository:** [https://github.com/iamhardworking/I-BFM](https://github.com/iamhardworking/I-BFM)
-- **Code repository:** [https://github.com/iamhardworking/I_BFM](https://github.com/iamhardworking/I_BFM)
+- **Code repository (private):** [https://github.com/iamhardworking/I-BFM-Code](https://github.com/iamhardworking/I-BFM-Code)
 
 ## Live MuJoCo viewer
 
