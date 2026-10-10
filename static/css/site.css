@@ -130,6 +130,7 @@ video, img { display: block; max-width: 100%; }
 .live-placeholder button:hover { background: var(--blue-dark); }
 
 .showcase-section { border-bottom: 1px solid var(--line); }
+.task-commentary { max-width: 760px; margin: 1rem auto 0; color: var(--muted); font-size: 1.15rem; line-height: 1.65; text-align: center; }
 .showcase-video-frame { max-width: 1120px; margin: 2.4rem auto 0; overflow: hidden; border: 1px solid var(--line); border-radius: 12px; background: #11191e; box-shadow: 0 14px 40px rgba(31, 52, 72, .08); }
 .showcase-video-frame video { width: 100%; max-height: 75vh; object-fit: contain; }
 
