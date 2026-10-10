@@ -26,7 +26,7 @@ MP4 files have no audio track. Each video starts when scrolled into view and loo
 The Overview project movie retains its audio and sound toggle; the hero background
 uses a separate silent copy of its video stream.
 
-Additional real-world clips are grouped beneath the matching showcase: Carry (`carry-1`, `getup-and-carry-1`), Push (`push-1`, `push2-1`, `push1-2`), and Kick (`normal-kick-1`, `kick1-1`). These clips live under `static/video/{carry,push,kick}/` and use a two-column layout that stacks on mobile.
+The Carry, Push, and Kick showcases display only the new clips in separate video galleries with a large player, selectable thumbnails, and previous/next controls. The original three showcase videos remain in the repository but are no longer referenced by these sections.
 
 The Results section presents the formal 3×100 evaluations for three tasks and
 three conditions using the same 166.560M policy:

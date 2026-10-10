@@ -15,6 +15,34 @@ const autoplayObserver = new IntersectionObserver(
   { rootMargin: "100px 0px", threshold: 0.1 }
 );
 autoplayOnViewVideos.forEach((video) => autoplayObserver.observe(video));
+document.querySelectorAll("[data-video-gallery]").forEach((gallery) => {
+  const slides = [...gallery.querySelectorAll(".gallery-slide")];
+  const thumbnails = [...gallery.querySelectorAll("[data-gallery-index]")];
+  const counter = gallery.querySelector(".gallery-counter");
+  let activeIndex = 0;
+  const showSlide = (index) => {
+    activeIndex = (index + slides.length) % slides.length;
+    slides.forEach((slide, i) => {
+      slide.querySelector("video").pause();
+      slide.hidden = i !== activeIndex;
+      thumbnails[i].setAttribute("aria-current", String(i === activeIndex));
+    });
+    counter.textContent = `${activeIndex + 1} / ${slides.length}`;
+    const video = slides[activeIndex].querySelector("video");
+    const rect = video.getBoundingClientRect();
+    if (!document.hidden && rect.bottom > 0 && rect.top < window.innerHeight) playVisibleVideo(video);
+  };
+  thumbnails.forEach((button, index) => button.addEventListener("click", () => showSlide(index)));
+  gallery.querySelectorAll("[data-gallery-step]").forEach((button) => {
+    button.addEventListener("click", () => showSlide(activeIndex + Number(button.dataset.galleryStep)));
+  });
+  gallery.addEventListener("keydown", (event) => {
+    if (!event.target.closest("button") || !["ArrowLeft", "ArrowRight"].includes(event.key)) return;
+    event.preventDefault();
+    showSlide(activeIndex + (event.key === "ArrowRight" ? 1 : -1));
+    thumbnails[activeIndex].focus();
+  });
+});
 document.addEventListener("visibilitychange", () => {
   autoplayOnViewVideos.forEach((video) => {
     const rect = video.getBoundingClientRect();

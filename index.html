@@ -142,56 +142,102 @@
 
       <section class="section light showcase-section" id="robust-carry-box">
         <h2 class="section-title reveal">Robust Carry Box</h2>
-        <div class="showcase-video-frame reveal">
-          <video src="static/video/robust-carry-box.mp4" poster="static/video/robust-carry-box-poster.jpg" data-autoplay-on-view loop muted playsinline controls preload="none" aria-label="Robust Carry Box video"></video>
-        </div>
-        <div class="showcase-clips reveal">
-            <figure class="showcase-clip">
-              <video src="static/video/carry/carry-1.mp4" data-autoplay-on-view loop muted playsinline controls preload="metadata" aria-label="Carry Box video"></video>
+        <div class="video-gallery reveal" data-video-gallery aria-label="Carry Box video gallery">
+          <div class="gallery-stage">
+            <figure class="gallery-slide" id="carry-clip-0">
+              <video src="static/video/carry/carry-1.mp4" poster="static/video/carry/carry-1-poster.jpg" controls data-autoplay-on-view loop muted playsinline preload="none" aria-label="Carry Box video"></video>
               <figcaption>Carry Box</figcaption>
             </figure>
-            <figure class="showcase-clip">
-              <video src="static/video/carry/getup-and-carry-1.mp4" data-autoplay-on-view loop muted playsinline controls preload="metadata" aria-label="Get Up and Carry video"></video>
+            <figure class="gallery-slide" id="carry-clip-1" hidden>
+              <video src="static/video/carry/getup-and-carry-1.mp4" poster="static/video/carry/getup-and-carry-1-poster.jpg" controls data-autoplay-on-view loop muted playsinline preload="none" aria-label="Get Up and Carry video"></video>
               <figcaption>Get Up and Carry</figcaption>
             </figure>
+          </div>
+          <div class="gallery-navigation">
+            <button class="gallery-arrow" type="button" data-gallery-step="-1" aria-label="Previous Carry Box video">←</button>
+            <span class="gallery-counter" aria-live="polite">1 / 2</span>
+            <button class="gallery-arrow" type="button" data-gallery-step="1" aria-label="Next Carry Box video">→</button>
+          </div>
+          <div class="gallery-thumbnails">
+            <button class="gallery-thumbnail" type="button" data-gallery-index="0" aria-controls="carry-clip-0" aria-current="true" aria-label="Show Carry Box">
+              <img src="static/video/carry/carry-1-poster.jpg" alt="" loading="lazy" />
+              <span>Carry Box</span>
+            </button>
+            <button class="gallery-thumbnail" type="button" data-gallery-index="1" aria-controls="carry-clip-1" aria-current="false" aria-label="Show Get Up and Carry">
+              <img src="static/video/carry/getup-and-carry-1-poster.jpg" alt="" loading="lazy" />
+              <span>Get Up and Carry</span>
+            </button>
+          </div>
         </div>
       </section>
 
       <section class="section light showcase-section" id="robust-push-box">
         <h2 class="section-title reveal">Robust Push Box</h2>
-        <div class="showcase-video-frame reveal">
-          <video src="static/video/robust-push-box.mp4" poster="static/video/robust-push-box-poster.jpg" data-autoplay-on-view loop muted playsinline controls preload="none" aria-label="Robust Push Box video"></video>
-        </div>
-        <div class="showcase-clips reveal">
-            <figure class="showcase-clip">
-              <video src="static/video/push/push-1.mp4" data-autoplay-on-view loop muted playsinline controls preload="metadata" aria-label="Push Box · 1 video"></video>
+        <div class="video-gallery reveal" data-video-gallery aria-label="Push Box video gallery">
+          <div class="gallery-stage">
+            <figure class="gallery-slide" id="push-clip-0">
+              <video src="static/video/push/push-1.mp4" poster="static/video/push/push-1-poster.jpg" controls data-autoplay-on-view loop muted playsinline preload="none" aria-label="Push Box · 1 video"></video>
               <figcaption>Push Box · 1</figcaption>
             </figure>
-            <figure class="showcase-clip">
-              <video src="static/video/push/push2-1.mp4" data-autoplay-on-view loop muted playsinline controls preload="metadata" aria-label="Push Box · 2 video"></video>
+            <figure class="gallery-slide" id="push-clip-1" hidden>
+              <video src="static/video/push/push2-1.mp4" poster="static/video/push/push2-1-poster.jpg" controls data-autoplay-on-view loop muted playsinline preload="none" aria-label="Push Box · 2 video"></video>
               <figcaption>Push Box · 2</figcaption>
             </figure>
-<figure class="showcase-clip">
-              <video src="static/video/push/push1-2.mp4" data-autoplay-on-view loop muted playsinline controls preload="metadata" aria-label="Push Box · 3 video"></video>
+            <figure class="gallery-slide" id="push-clip-2" hidden>
+              <video src="static/video/push/push1-2.mp4" poster="static/video/push/push1-2-poster.jpg" controls data-autoplay-on-view loop muted playsinline preload="none" aria-label="Push Box · 3 video"></video>
               <figcaption>Push Box · 3</figcaption>
             </figure>
+          </div>
+          <div class="gallery-navigation">
+            <button class="gallery-arrow" type="button" data-gallery-step="-1" aria-label="Previous Push Box video">←</button>
+            <span class="gallery-counter" aria-live="polite">1 / 3</span>
+            <button class="gallery-arrow" type="button" data-gallery-step="1" aria-label="Next Push Box video">→</button>
+          </div>
+          <div class="gallery-thumbnails">
+            <button class="gallery-thumbnail" type="button" data-gallery-index="0" aria-controls="push-clip-0" aria-current="true" aria-label="Show Push Box · 1">
+              <img src="static/video/push/push-1-poster.jpg" alt="" loading="lazy" />
+              <span>Push Box · 1</span>
+            </button>
+            <button class="gallery-thumbnail" type="button" data-gallery-index="1" aria-controls="push-clip-1" aria-current="false" aria-label="Show Push Box · 2">
+              <img src="static/video/push/push2-1-poster.jpg" alt="" loading="lazy" />
+              <span>Push Box · 2</span>
+            </button>
+            <button class="gallery-thumbnail" type="button" data-gallery-index="2" aria-controls="push-clip-2" aria-current="false" aria-label="Show Push Box · 3">
+              <img src="static/video/push/push1-2-poster.jpg" alt="" loading="lazy" />
+              <span>Push Box · 3</span>
+            </button>
+          </div>
         </div>
       </section>
 
       <section class="section light showcase-section" id="robust-kick-box">
         <h2 class="section-title reveal">Robust Kick Box</h2>
-        <div class="showcase-video-frame reveal">
-          <video src="static/video/robust-kick-box.mp4" poster="static/video/robust-kick-box-poster.jpg" data-autoplay-on-view loop muted playsinline controls preload="none" aria-label="Robust Kick Box video"></video>
-        </div>
-        <div class="showcase-clips reveal">
-            <figure class="showcase-clip">
-              <video src="static/video/kick/normal-kick-1.mp4" data-autoplay-on-view loop muted playsinline controls preload="metadata" aria-label="Normal Kick video"></video>
+        <div class="video-gallery reveal" data-video-gallery aria-label="Kick Box video gallery">
+          <div class="gallery-stage">
+            <figure class="gallery-slide" id="kick-clip-0">
+              <video src="static/video/kick/normal-kick-1.mp4" poster="static/video/kick/normal-kick-1-poster.jpg" controls data-autoplay-on-view loop muted playsinline preload="none" aria-label="Normal Kick video"></video>
               <figcaption>Normal Kick</figcaption>
             </figure>
-            <figure class="showcase-clip">
-              <video src="static/video/kick/kick1-1.mp4" data-autoplay-on-view loop muted playsinline controls preload="metadata" aria-label="Kick Box video"></video>
+            <figure class="gallery-slide" id="kick-clip-1" hidden>
+              <video src="static/video/kick/kick1-1.mp4" poster="static/video/kick/kick1-1-poster.jpg" controls data-autoplay-on-view loop muted playsinline preload="none" aria-label="Kick Box video"></video>
               <figcaption>Kick Box</figcaption>
             </figure>
+          </div>
+          <div class="gallery-navigation">
+            <button class="gallery-arrow" type="button" data-gallery-step="-1" aria-label="Previous Kick Box video">←</button>
+            <span class="gallery-counter" aria-live="polite">1 / 2</span>
+            <button class="gallery-arrow" type="button" data-gallery-step="1" aria-label="Next Kick Box video">→</button>
+          </div>
+          <div class="gallery-thumbnails">
+            <button class="gallery-thumbnail" type="button" data-gallery-index="0" aria-controls="kick-clip-0" aria-current="true" aria-label="Show Normal Kick">
+              <img src="static/video/kick/normal-kick-1-poster.jpg" alt="" loading="lazy" />
+              <span>Normal Kick</span>
+            </button>
+            <button class="gallery-thumbnail" type="button" data-gallery-index="1" aria-controls="kick-clip-1" aria-current="false" aria-label="Show Kick Box">
+              <img src="static/video/kick/kick1-1-poster.jpg" alt="" loading="lazy" />
+              <span>Kick Box</span>
+            </button>
+          </div>
         </div>
       </section>
 
