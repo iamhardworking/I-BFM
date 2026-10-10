@@ -121,7 +121,7 @@ video, img { display: block; max-width: 100%; }
 .live-embed { position: relative; min-height: clamp(680px, 80vh, 880px); overflow: hidden; background: #17212b; }
 .live-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; opacity: 0; pointer-events: none; transition: opacity .25s ease; }
 .live-embed.loaded iframe { opacity: 1; pointer-events: auto; }
-.live-full-page { position: absolute; z-index: 3; top: 16px; left: 16px; display: grid; place-items: center; width: 42px; height: 42px; border: 1px solid var(--line); border-radius: 50%; color: #111; background: white; font-size: 1.35rem; font-weight: 700; line-height: 1; }
+.live-full-page { position: absolute; z-index: 3; top: 16px; right: 16px; display: grid; place-items: center; width: 42px; height: 42px; border: 1px solid var(--line); border-radius: 50%; color: #111; background: white; font-size: 1.35rem; font-weight: 700; line-height: 1; }
 .live-full-page:hover { border-color: #111; }
 .live-placeholder { position: absolute; z-index: 1; top: 50%; left: 50%; width: min(570px, calc(100% - 40px)); padding: 2.3rem; transform: translate(-50%, -50%); border-radius: 10px; background: white; text-align: center; box-shadow: 0 12px 36px rgba(0, 0, 0, .17); transition: opacity .25s ease; }
 .live-embed.loaded .live-placeholder { opacity: 0; pointer-events: none; }
